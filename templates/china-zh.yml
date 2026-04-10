@@ -1,0 +1,39 @@
+name: 中文新闻综合
+description: 中文科技、商业、加密货币、时事新闻聚合（通过 RSSHub 等网关）
+language: zh
+
+keywords:
+  - 人工智能
+  - 区块链
+  - 加密货币
+  - 科技
+  - 创业
+  - 监管
+  - 经济
+  - 政策
+
+polymarket:
+  tags: ["china", "crypto"]
+
+feeds:
+  # 科技 & 商业
+  - name: 36氪
+    url: https://36kr.com/feed
+  - name: 虎嗅
+    url: https://www.huxiu.com/rss/0.xml
+  - name: 机器之心
+    url: https://rsshub.app/jiqizhixin/latest
+
+  # 国际中文
+  - name: BBC中文
+    url: https://feeds.bbci.co.uk/zhongwen/simp/rss.xml
+  - name: 纽约时报中文
+    url: https://feedx.net/rss/nytimes.xml
+  - name: 联合早报
+    url: https://rsshub.app/zaobao/realtime/china
+
+  # 加密中文
+  - name: 金色财经
+    url: https://rsshub.app/jinse/lives
+  - name: PANews
+    url: https://rsshub.app/panewslab/news

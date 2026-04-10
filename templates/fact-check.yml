@@ -1,0 +1,36 @@
+name: Fact Check & Verification
+description: Global fact-checking organizations, misinformation tracking, and media verification
+language: both
+
+keywords:
+  - fact check
+  - misinformation
+  - disinformation
+  - debunk
+  - false claim
+  - misleading
+  - verification
+  - 辟谣
+  - 假新闻
+  - 事实核查
+
+polymarket:
+  tags: ["politics", "misinformation"]
+
+feeds:
+  - name: PolitiFact
+    url: https://www.politifact.com/rss/all/
+  - name: Snopes
+    url: https://www.snopes.com/feed/
+  - name: FactCheck.org
+    url: https://www.factcheck.org/feed/
+  - name: Full Fact (UK)
+    url: https://fullfact.org/feed/
+  - name: AFP Fact Check
+    url: https://factcheck.afp.com/feed
+  - name: Lead Stories
+    url: https://leadstories.com/feed/
+  - name: Media Bias/Fact Check
+    url: https://mediabiasfactcheck.com/feed/
+  - name: Check Your Fact
+    url: https://checkyourfact.com/feed/

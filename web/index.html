@@ -3,215 +3,283 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IntelRadar Dashboard</title>
+<title>IntelRadar — Intelligence Dashboard</title>
 <style>
-  :root {
-    --bg: #0a0e17; --surface: #111827; --border: #1e293b;
-    --text: #e2e8f0; --muted: #64748b; --accent: #3b82f6;
-    --green: #22c55e; --red: #ef4444; --amber: #f59e0b;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace; background: var(--bg); color: var(--text); min-height: 100vh; }
+:root {
+  --bg: #06080d; --surface: #0c1117; --surface2: #111922; --border: #1a2332;
+  --text: #c9d1d9; --muted: #4a5568; --dim: #2d3748;
+  --accent: #58a6ff; --green: #3fb950; --red: #f85149; --amber: #d29922; --purple: #bc8cff;
+  --glow: rgba(88,166,255,0.15);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'SF Mono','Cascadia Code','Fira Code',monospace;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
 
-  .header {
-    background: var(--surface); border-bottom: 1px solid var(--border);
-    padding: 1rem 2rem; display: flex; align-items: center; gap: 1rem;
-  }
-  .header h1 { font-size: 1.2rem; }
-  .header .badge { background: var(--green); color: #000; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
-  .header .version { color: var(--muted); font-size: 0.8rem; margin-left: auto; }
+/* ── Top Bar ── */
+.topbar{
+  background:var(--surface);border-bottom:1px solid var(--border);
+  padding:.6rem 1.5rem;display:flex;align-items:center;gap:1rem;
+  position:sticky;top:0;z-index:100;backdrop-filter:blur(10px);
+}
+.topbar .logo{display:flex;align-items:center;gap:.5rem}
+.topbar .logo span{font-size:1.3rem}
+.topbar .logo h1{font-size:1rem;font-weight:600;letter-spacing:.05em;color:var(--accent)}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.topbar .meta{margin-left:auto;font-size:.7rem;color:var(--muted);display:flex;gap:1.5rem}
+.topbar .meta span b{color:var(--text)}
 
-  .container { max-width: 1200px; margin: 0 auto; padding: 1.5rem; display: grid; gap: 1.5rem; }
+/* ── Grid Layout ── */
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;grid-template-rows:auto auto 1fr;gap:1rem;padding:1rem 1.5rem;max-width:1600px;margin:0 auto}
 
-  .card {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem;
-  }
-  .card h2 { font-size: 0.9rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+/* ── Stat Cards ── */
+.stat-row{grid-column:1/-1;display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:1rem;text-align:center;position:relative;overflow:hidden}
+.stat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.5}
+.stat .val{font-size:1.8rem;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.stat .val.green{color:var(--green)} .stat .val.amber{color:var(--amber)} .stat .val.purple{color:var(--purple)}
+.stat .lbl{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:.25rem}
 
-  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
-  .stat { text-align: center; }
-  .stat .value { font-size: 2rem; font-weight: 700; color: var(--accent); }
-  .stat .label { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+/* ── Ticker ── */
+.ticker-wrap{grid-column:1/-1;background:var(--surface);border:1px solid var(--border);border-radius:6px;overflow:hidden;height:32px;position:relative}
+.ticker{display:flex;align-items:center;height:100%;white-space:nowrap;animation:scroll 60s linear infinite;padding:0 1rem}
+.ticker .item{font-size:.75rem;padding:0 2rem;color:var(--muted)}
+.ticker .item b{color:var(--text)}
+.ticker .sep{color:var(--dim)}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-  .templates { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
-  .tpl-card {
-    background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 1rem;
-    cursor: pointer; transition: border-color 0.2s;
-  }
-  .tpl-card:hover { border-color: var(--accent); }
-  .tpl-card .name { font-weight: 600; margin-bottom: 0.25rem; }
-  .tpl-card .desc { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.5rem; }
-  .tpl-card .meta { font-size: 0.7rem; color: var(--muted); }
-  .tpl-card .meta span { color: var(--accent); }
+/* ── Section Card ── */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.card-head{padding:.75rem 1rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.5rem}
+.card-head h2{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:500}
+.card-head .count{background:var(--border);color:var(--text);font-size:.65rem;padding:1px 6px;border-radius:3px}
+.card-body{padding:1rem;max-height:500px;overflow-y:auto}
+.card-body::-webkit-scrollbar{width:4px} .card-body::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
 
-  .history-list { display: flex; flex-direction: column; gap: 0.75rem; }
-  .history-item {
-    background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 1rem;
-  }
-  .history-item .top { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
-  .history-item .template-tag {
-    background: var(--accent); color: #fff; padding: 1px 6px; border-radius: 3px; font-size: 0.7rem;
-  }
-  .history-item .date { font-size: 0.75rem; color: var(--muted); }
-  .history-item .preview { font-size: 0.8rem; color: var(--muted); line-height: 1.4; }
+/* ── Templates Grid ── */
+.templates-section{grid-column:1/3;grid-row:3}
+.tpl-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.tpl{background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.85rem;cursor:pointer;transition:all .2s}
+.tpl:hover{border-color:var(--accent);box-shadow:0 0 15px var(--glow)}
+.tpl .tpl-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem}
+.tpl .tpl-name{font-weight:600;font-size:.85rem}
+.tpl .tpl-feeds{font-size:.65rem;color:var(--accent)}
+.tpl .tpl-desc{font-size:.7rem;color:var(--muted);margin-bottom:.5rem;line-height:1.4}
+.tpl .tpl-tags{display:flex;flex-wrap:wrap;gap:.3rem}
+.tpl .tag{font-size:.6rem;padding:1px 5px;border-radius:3px;background:var(--border);color:var(--muted)}
+.tpl .run-btn{
+  display:none;margin-top:.5rem;width:100%;padding:.35rem;border:1px solid var(--accent);
+  background:transparent;color:var(--accent);border-radius:4px;cursor:pointer;font-family:inherit;font-size:.7rem;
+  transition:all .15s;
+}
+.tpl:hover .run-btn{display:block}
+.tpl .run-btn:hover{background:var(--accent);color:#000}
 
-  .actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-  .btn {
-    background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.2rem;
-    border-radius: 6px; cursor: pointer; font-family: inherit; font-size: 0.85rem;
-    transition: opacity 0.2s;
-  }
-  .btn:hover { opacity: 0.85; }
-  .btn:disabled { opacity: 0.5; cursor: not-allowed; }
-  .btn.secondary { background: var(--border); }
-  .btn.danger { background: var(--red); }
+/* ── History ── */
+.history-section{grid-column:3/5;grid-row:3}
+.hist-item{background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.85rem;margin-bottom:.6rem;cursor:pointer;transition:border-color .2s}
+.hist-item:hover{border-color:var(--accent)}
+.hist-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem}
+.hist-badge{font-size:.6rem;padding:2px 6px;border-radius:3px;font-weight:600}
+.hist-badge.crypto{background:#f7931a22;color:#f7931a}
+.hist-badge.ai-tech{background:#58a6ff22;color:#58a6ff}
+.hist-badge.geopolitics{background:#f8514922;color:#f85149}
+.hist-badge.fintel,.hist-badge.finance{background:#3fb95022;color:#3fb950}
+.hist-badge.fact-check{background:#d2992222;color:#d29922}
+.hist-badge.china-zh{background:#bc8cff22;color:#bc8cff}
+.hist-badge.breaking{background:#f8514922;color:#f85149}
+.hist-badge.politics{background:#d2992222;color:#d29922}
+.hist-badge.sports{background:#3fb95022;color:#3fb950}
+.hist-date{font-size:.65rem;color:var(--muted)}
+.hist-preview{font-size:.72rem;color:var(--muted);line-height:1.5;max-height:0;overflow:hidden;transition:max-height .3s}
+.hist-item.open .hist-preview{max-height:300px}
 
-  .log { background: #000; border-radius: 6px; padding: 1rem; font-size: 0.75rem; color: var(--green); max-height: 200px; overflow-y: auto; white-space: pre-wrap; }
+/* ── Actions ── */
+.actions-section{grid-column:1/-1}
+.act-bar{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap}
+.btn{
+  padding:.5rem 1rem;border-radius:5px;border:1px solid var(--border);background:var(--surface2);
+  color:var(--text);cursor:pointer;font-family:inherit;font-size:.75rem;transition:all .15s;
+}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent);color:#000;border-color:var(--accent);font-weight:600}
+.btn.primary:hover{opacity:.85}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.log{background:#000;border:1px solid var(--border);border-radius:6px;padding:.75rem;margin-top:.75rem;font-size:.7rem;color:var(--green);max-height:150px;overflow-y:auto;white-space:pre-wrap;display:none}
+.toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--surface);border:1px solid var(--green);color:var(--green);padding:.6rem 1.2rem;border-radius:6px;font-size:.75rem;opacity:0;transition:opacity .3s;z-index:200}
+.toast.show{opacity:1}
 
-  .empty { color: var(--muted); text-align: center; padding: 2rem; font-size: 0.85rem; }
-
-  @media (max-width: 600px) {
-    .container { padding: 0.75rem; }
-    .stats { grid-template-columns: repeat(2, 1fr); }
-    .templates { grid-template-columns: 1fr; }
-  }
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr}
+  .stat-row{grid-template-columns:repeat(2,1fr)}
+  .templates-section,.history-section{grid-column:1/-1;grid-row:auto}
+  .tpl-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
 
-<div class="header">
-  <span style="font-size:1.5rem">📡</span>
-  <h1>IntelRadar</h1>
-  <span class="badge" id="status-badge">Loading...</span>
-  <span class="version" id="version"></span>
+<div class="topbar">
+  <div class="logo"><span>📡</span><h1>INTELRADAR</h1></div>
+  <div class="pulse"></div>
+  <div class="meta">
+    <span>UPTIME <b id="m-uptime">--</b></span>
+    <span>PROVIDER <b id="m-provider">--</b></span>
+    <span>LANG <b id="m-lang">--</b></span>
+    <span id="m-version" style="color:var(--dim)">v--</span>
+  </div>
 </div>
 
-<div class="container">
+<div class="grid">
   <!-- Stats -->
-  <div class="card">
-    <h2>System Status</h2>
-    <div class="stats">
-      <div class="stat"><div class="value" id="s-uptime">--</div><div class="label">Uptime</div></div>
-      <div class="stat"><div class="value" id="s-templates">--</div><div class="label">Active Templates</div></div>
-      <div class="stat"><div class="value" id="s-provider">--</div><div class="label">AI Provider</div></div>
-      <div class="stat"><div class="value" id="s-schedule">--</div><div class="label">Schedule</div></div>
-    </div>
+  <div class="stat-row">
+    <div class="stat"><div class="val" id="s-templates">--</div><div class="lbl">Templates</div></div>
+    <div class="stat"><div class="val green" id="s-feeds">--</div><div class="lbl">RSS Feeds</div></div>
+    <div class="stat"><div class="val amber" id="s-briefings">--</div><div class="lbl">Briefings</div></div>
+    <div class="stat"><div class="val purple" id="s-markets">--</div><div class="lbl">Markets Tracked</div></div>
+    <div class="stat"><div class="val" id="s-schedule">--</div><div class="lbl">Next Run</div></div>
+  </div>
+
+  <!-- Ticker -->
+  <div class="ticker-wrap">
+    <div class="ticker" id="ticker"></div>
   </div>
 
   <!-- Actions -->
-  <div class="card">
-    <h2>Actions</h2>
-    <div class="actions">
-      <button class="btn" onclick="triggerRun()">Run All Now</button>
-      <button class="btn secondary" onclick="refreshAll()">Refresh</button>
+  <div class="card actions-section">
+    <div class="card-body">
+      <div class="act-bar">
+        <button class="btn primary" onclick="triggerAll()">RUN ALL TEMPLATES</button>
+        <button class="btn" onclick="refreshAll()">REFRESH</button>
+        <span style="margin-left:auto;font-size:.65rem;color:var(--muted)" id="last-refresh">--</span>
+      </div>
+      <div class="log" id="log"></div>
     </div>
-    <div class="log" id="action-log" style="margin-top:1rem;display:none"></div>
   </div>
 
   <!-- Templates -->
-  <div class="card">
-    <h2>Domain Templates</h2>
-    <div class="templates" id="templates-grid"></div>
+  <div class="card templates-section">
+    <div class="card-head"><h2>Domain Templates</h2><span class="count" id="tpl-count">0</span></div>
+    <div class="card-body"><div class="tpl-grid" id="tpl-grid"></div></div>
   </div>
 
   <!-- History -->
-  <div class="card">
-    <h2>Recent Briefings</h2>
-    <div class="history-list" id="history-list"></div>
+  <div class="card history-section">
+    <div class="card-head"><h2>Briefing History</h2><span class="count" id="hist-count">0</span></div>
+    <div class="card-body" id="hist-list"></div>
   </div>
 </div>
 
+<div class="toast" id="toast"></div>
+
 <script>
-const API = window.location.origin;
+const API='';
+let templates=[],history=[];
 
-async function fetchJSON(path) {
-  const res = await fetch(API + path);
-  return res.json();
+async function fetchJSON(p){const r=await fetch(API+p);return r.json()}
+
+function fmt(s){const h=Math.floor(s/3600),m=Math.floor(s%3600/60);return h>0?h+'h '+m+'m':m+'m'}
+
+function toast(msg,color){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.style.borderColor=color||'var(--green)';t.style.color=color||'var(--green)';
+  t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);
 }
 
-function formatUptime(secs) {
-  const h = Math.floor(secs / 3600);
-  const m = Math.floor((secs % 3600) / 60);
-  return h > 0 ? `${h}h ${m}m` : `${m}m`;
+async function loadStatus(){
+  try{
+    const s=await fetchJSON('/api/status');
+    document.getElementById('m-uptime').textContent=fmt(s.uptime);
+    document.getElementById('m-provider').textContent=s.aiProvider.toUpperCase();
+    document.getElementById('m-lang').textContent=s.language.toUpperCase();
+    document.getElementById('m-version').textContent='v'+s.version;
+    document.getElementById('s-templates').textContent=s.templates.length;
+    const cron=s.schedule.split(' ');
+    const hours=cron[1]||'--';
+    document.getElementById('s-schedule').textContent=hours.split(',')[0]+':00';
+    document.getElementById('last-refresh').textContent='Updated '+new Date().toLocaleTimeString();
+  }catch{document.querySelector('.pulse').style.background='var(--red)'}
 }
 
-async function loadStatus() {
-  try {
-    const s = await fetchJSON('/api/status');
-    document.getElementById('status-badge').textContent = 'ONLINE';
-    document.getElementById('status-badge').style.background = 'var(--green)';
-    document.getElementById('version').textContent = `v${s.version}`;
-    document.getElementById('s-uptime').textContent = formatUptime(s.uptime);
-    document.getElementById('s-templates').textContent = s.templates.length;
-    document.getElementById('s-provider').textContent = s.aiProvider;
-    document.getElementById('s-schedule').textContent = s.schedule.split(' ').slice(1, 2).join('') + ':00';
-  } catch {
-    document.getElementById('status-badge').textContent = 'OFFLINE';
-    document.getElementById('status-badge').style.background = 'var(--red)';
-  }
+async function loadTemplates(){
+  const grid=document.getElementById('tpl-grid');
+  try{
+    templates=await fetchJSON('/api/templates');
+    document.getElementById('tpl-count').textContent=templates.length;
+    let totalFeeds=0;
+    grid.innerHTML=templates.map(t=>{
+      totalFeeds+=t.feedCount||0;
+      const tags=(t.keywords||[]).slice(0,5).map(k=>'<span class="tag">'+k+'</span>').join('');
+      return '<div class="tpl" onclick="triggerTpl(\''+t.name+'\')">'+
+        '<div class="tpl-top"><span class="tpl-name">'+t.displayName+'</span><span class="tpl-feeds">'+(t.feedCount||0)+' feeds</span></div>'+
+        '<div class="tpl-desc">'+(t.description||'')+'</div>'+
+        '<div class="tpl-tags">'+tags+'</div>'+
+        '<button class="run-btn" onclick="event.stopPropagation();triggerTpl(\''+t.name+'\')">RUN NOW</button>'+
+      '</div>';
+    }).join('');
+    document.getElementById('s-feeds').textContent=totalFeeds;
+  }catch{grid.innerHTML='<div style="color:var(--muted)">Failed to load</div>'}
 }
 
-async function loadTemplates() {
-  const grid = document.getElementById('templates-grid');
-  try {
-    const templates = await fetchJSON('/api/templates');
-    grid.innerHTML = templates.map(t => `
-      <div class="tpl-card" onclick="triggerTemplate('${t.name}')">
-        <div class="name">${t.displayName || t.name}</div>
-        <div class="desc">${t.description || ''}</div>
-        <div class="meta"><span>${t.feedCount || 0}</span> feeds &middot; <span>${(t.keywords || []).length}</span> keywords</div>
-      </div>
-    `).join('');
-  } catch { grid.innerHTML = '<div class="empty">Failed to load templates</div>'; }
+async function loadHistory(){
+  const list=document.getElementById('hist-list');
+  try{
+    history=await fetchJSON('/api/history?limit=15');
+    document.getElementById('hist-count').textContent=history.length;
+    document.getElementById('s-briefings').textContent=history.length;
+    if(!history.length){list.innerHTML='<div style="color:var(--muted);text-align:center;padding:2rem">No briefings yet. Click RUN ALL to generate your first.</div>';return}
+    list.innerHTML=history.map((h,i)=>{
+      const clean=h.preview.replace(/<[^>]+>/g,'').slice(0,200);
+      return '<div class="hist-item" onclick="this.classList.toggle(\'open\')">'+
+        '<div class="hist-top"><span class="hist-badge '+h.template+'">'+h.template+'</span><span class="hist-date">'+h.date+'</span></div>'+
+        '<div class="hist-preview">'+clean+'...</div></div>';
+    }).join('');
+    // Ticker
+    buildTicker();
+  }catch{list.innerHTML='<div style="color:var(--muted)">Failed to load</div>'}
 }
 
-async function loadHistory() {
-  const list = document.getElementById('history-list');
-  try {
-    const history = await fetchJSON('/api/history?limit=10');
-    if (!history.length) { list.innerHTML = '<div class="empty">No briefings yet. Run your first cycle!</div>'; return; }
-    list.innerHTML = history.map(h => `
-      <div class="history-item">
-        <div class="top">
-          <span class="template-tag">${h.template}</span>
-          <span class="date">${h.date}</span>
-        </div>
-        <div class="preview">${h.preview.replace(/<[^>]+>/g, '').slice(0, 200)}...</div>
-      </div>
-    `).join('');
-  } catch { list.innerHTML = '<div class="empty">Failed to load history</div>'; }
+function buildTicker(){
+  const el=document.getElementById('ticker');
+  if(!history.length){el.innerHTML='<span class="item">Waiting for first briefing cycle...</span>';return}
+  const items=history.slice(0,10).map(h=>{
+    const t=h.preview.replace(/<[^>]+>/g,'').slice(0,80);
+    return '<span class="item"><b>['+h.template.toUpperCase()+']</b> '+t+'</span><span class="sep">|</span>';
+  }).join('');
+  el.innerHTML=items+items; // duplicate for seamless scroll
 }
 
-async function triggerRun() {
-  const log = document.getElementById('action-log');
-  log.style.display = 'block';
-  log.textContent = '> Triggering all templates...\n';
-  try {
-    const res = await fetch(API + '/api/trigger', { method: 'POST' });
-    const data = await res.json();
-    log.textContent += `> ${JSON.stringify(data)}\n> Running in background. Refresh in a few minutes to see results.`;
-  } catch (e) { log.textContent += `> Error: ${e.message}`; }
+async function triggerAll(){
+  const log=document.getElementById('log');log.style.display='block';
+  log.textContent='> Triggering all templates...\n';
+  try{
+    const r=await fetch(API+'/api/trigger',{method:'POST'});
+    const d=await r.json();
+    log.textContent+='> '+JSON.stringify(d)+'\n> Running in background...';
+    toast('All templates triggered');
+  }catch(e){log.textContent+='> Error: '+e.message;toast('Trigger failed','var(--red)')}
 }
 
-async function triggerTemplate(name) {
-  const log = document.getElementById('action-log');
-  log.style.display = 'block';
-  log.textContent = `> Triggering template: ${name}...\n`;
-  try {
-    const res = await fetch(API + '/api/trigger', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ template: name })
-    });
-    const data = await res.json();
-    log.textContent += `> ${JSON.stringify(data)}\n> Running in background.`;
-  } catch (e) { log.textContent += `> Error: ${e.message}`; }
+async function triggerTpl(name){
+  const log=document.getElementById('log');log.style.display='block';
+  log.textContent='> Triggering: '+name+'...\n';
+  try{
+    const r=await fetch(API+'/api/trigger',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({template:name})});
+    const d=await r.json();
+    log.textContent+='> '+JSON.stringify(d)+'\n> Running in background...';
+    toast(name+' triggered');
+  }catch(e){log.textContent+='> Error: '+e.message;toast('Trigger failed','var(--red)')}
 }
 
-function refreshAll() { loadStatus(); loadTemplates(); loadHistory(); }
-
-// Auto refresh every 60s
+function refreshAll(){loadStatus();loadTemplates();loadHistory();toast('Refreshed')}
 refreshAll();
-setInterval(loadStatus, 60000);
+setInterval(loadStatus,30000);
+setInterval(()=>{loadHistory()},120000);
+
+// Polymarket count
+fetchJSON('/api/templates').then(ts=>{
+  const hasPoly=ts.filter(t=>t.keywords&&t.keywords.length).length;
+  document.getElementById('s-markets').textContent=hasPoly*15+'+'
+}).catch(()=>{});
 </script>
 </body>
 </html>

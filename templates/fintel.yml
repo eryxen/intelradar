@@ -1,0 +1,52 @@
+name: Financial Intelligence
+description: Central bank policy, macro economics, market signals, institutional moves, and financial regulation
+language: both
+
+keywords:
+  - Federal Reserve
+  - ECB
+  - interest rate
+  - inflation
+  - GDP
+  - bond yield
+  - forex
+  - commodities
+  - gold
+  - oil
+  - recession
+  - 美联储
+  - 降息
+  - 通胀
+  - 央行
+
+polymarket:
+  tags: ["economics", "finance", "fed"]
+
+feeds:
+  # Major Financial
+  - name: Bloomberg Markets
+    url: https://feeds.bloomberg.com/markets/news.rss
+  - name: Reuters Business
+    url: https://feeds.reuters.com/reuters/businessNews
+  - name: Reuters Markets
+    url: https://feeds.reuters.com/reuters/marketsNews
+  - name: CNBC Top News
+    url: https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114
+  - name: MarketWatch
+    url: https://feeds.marketwatch.com/marketwatch/topstories/
+  - name: Seeking Alpha
+    url: https://seekingalpha.com/feed.xml
+  - name: Zero Hedge
+    url: https://feeds.feedburner.com/zerohedge/feed
+
+  # Central Banks
+  - name: Federal Reserve
+    url: https://www.federalreserve.gov/feeds/press_all.xml
+  - name: Bank of England
+    url: https://www.bankofengland.co.uk/rss/news
+
+  # Analysis
+  - name: FT Markets
+    url: https://www.ft.com/markets?format=rss
+  - name: Yahoo Finance
+    url: https://finance.yahoo.com/news/rssindex

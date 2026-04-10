@@ -1,0 +1,31 @@
+name: Breaking News Wire
+description: Real-time wire service feeds from AP, Reuters, BBC, and major global news organizations
+language: en
+
+keywords:
+  - breaking
+  - urgent
+  - developing
+  - just in
+  - alert
+
+polymarket:
+  tags: []
+
+feeds:
+  - name: Reuters Top News
+    url: https://feeds.reuters.com/reuters/topNews
+  - name: Reuters World
+    url: https://feeds.reuters.com/reuters/worldNews
+  - name: BBC Top Stories
+    url: https://feeds.bbci.co.uk/news/rss.xml
+  - name: BBC World
+    url: https://feeds.bbci.co.uk/news/world/rss.xml
+  - name: Al Jazeera
+    url: https://www.aljazeera.com/xml/rss/all.xml
+  - name: NPR News
+    url: https://feeds.npr.org/1001/rss.xml
+  - name: The Guardian World
+    url: https://www.theguardian.com/world/rss
+  - name: CNN Top Stories
+    url: https://rss.cnn.com/rss/edition.rss

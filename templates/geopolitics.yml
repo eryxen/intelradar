@@ -1,0 +1,54 @@
+name: Geopolitics & Global Intelligence
+description: Think tank analysis, conflict tracking, diplomacy, sanctions, and worldwide geopolitical developments
+language: both
+
+keywords:
+  - geopolitics
+  - sanctions
+  - NATO
+  - conflict
+  - diplomacy
+  - war
+  - treaty
+  - alliance
+  - sovereignty
+  - 地缘政治
+  - 冲突
+  - 外交
+  - 制裁
+
+polymarket:
+  tags: ["politics", "geopolitics", "war"]
+
+feeds:
+  # Think Tanks
+  - name: Council on Foreign Relations
+    url: https://www.cfr.org/rss/all
+  - name: Brookings Institution
+    url: https://www.brookings.edu/feed/
+  - name: CSIS
+    url: https://www.csis.org/analysis/feed
+  - name: Carnegie Endowment
+    url: https://carnegieendowment.org/rss/solr/?lang=en
+  - name: Foreign Affairs
+    url: https://www.foreignaffairs.com/rss.xml
+  - name: Foreign Policy
+    url: https://foreignpolicy.com/feed/
+
+  # Global Coverage
+  - name: Al Jazeera
+    url: https://www.aljazeera.com/xml/rss/all.xml
+  - name: South China Morning Post
+    url: https://www.scmp.com/rss/4/feed
+  - name: The Diplomat
+    url: https://thediplomat.com/feed/
+  - name: Nikkei Asia
+    url: https://asia.nikkei.com/rss
+  - name: BBC World
+    url: https://feeds.bbci.co.uk/news/world/rss.xml
+
+  # Wire Services
+  - name: Reuters World
+    url: https://feeds.reuters.com/reuters/worldNews
+  - name: AP World
+    url: https://rsshub.app/apnews/topics/apf-topnews
