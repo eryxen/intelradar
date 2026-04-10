@@ -11,6 +11,7 @@ const templateLoader = require("./template-loader");
 const tg = require("./delivery/telegram");
 const discord = require("./delivery/discord");
 const webhook = require("./delivery/webhook");
+const breakingMonitor = require("./breaking-monitor");
 const fs = require("fs");
 const path = require("path");
 
@@ -42,6 +43,18 @@ async function runOnce(template) {
   if (!filtered.length) {
     console.log(`[${ts()}] [${name}] nothing passed filter, skipping`);
     return null;
+  }
+
+  // 3b. Merge in breaking highlights (queued from breaking monitor)
+  const highlights = breakingMonitor.flushHighlights();
+  if (highlights.length) {
+    console.log(`[${ts()}] [${name}] merging ${highlights.length} breaking highlights`);
+    for (const h of highlights) {
+      // Avoid duplicates with already-filtered articles
+      if (!filtered.find((f) => f.title === h.title)) {
+        filtered.unshift({ ...h, isHighlight: true });
+      }
+    }
   }
 
   // 4. Fetch prediction markets (if enabled)
@@ -121,6 +134,9 @@ function start() {
   console.log(`[${ts()}] Templates: ${process.env.TEMPLATES || "crypto,ai-tech"}`);
 
   cron.schedule(schedule, () => runAll(), { timezone: tz });
+
+  // Start breaking news monitor (separate cron)
+  breakingMonitor.start();
 }
 
 function ts() {

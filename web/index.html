@@ -193,7 +193,7 @@ body::after {
   display: flex;
   gap: 0;
   width: max-content;
-  animation: marquee 120s linear infinite;
+  animation: marquee 240s linear infinite;
 }
 
 .ticker-inner:hover { animation-play-state: paused; }
@@ -367,11 +367,107 @@ body::after {
   font-variant-numeric: tabular-nums;
 }
 
+/* View toggle: 2D | 3D */
+.map-view-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.map-view-btn {
+  background: transparent;
+  border: none;
+  border-right: 1px solid var(--border-mid);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.map-view-btn:last-child {
+  border-right: none;
+}
+
+.map-view-btn.active {
+  background: var(--blue-dim);
+  color: var(--blue-bright);
+}
+
+.map-view-btn:hover:not(.active) {
+  background: var(--bg-raised);
+  color: var(--text-primary);
+}
+
 #worldmap {
   display: block;
   width: 100%;
   cursor: crosshair;
 }
+
+/* Globe container */
+#globe-container {
+  display: none;
+  width: 100%;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+#globe-container canvas {
+  display: block;
+}
+
+/* Globe data layer bar */
+.globe-data-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 7px 20px;
+  border-top: 1px solid var(--border-dim);
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.globe-data-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.globe-data-item strong {
+  color: var(--blue-bright);
+  font-size: 12px;
+}
+
+/* Globe tooltip */
+#globe-tooltip {
+  position: fixed;
+  background: rgba(6,10,18,0.96);
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius-md);
+  padding: 8px 12px;
+  font-size: 11px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 200;
+  min-width: 140px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6), 0 0 0 1px rgba(26,143,255,0.1);
+}
+
+#globe-tooltip.visible { opacity: 1; }
+#globe-tooltip .tooltip-city { color: var(--blue-bright); font-weight: 700; font-size: 12px; margin-bottom: 3px; }
+#globe-tooltip .tooltip-coords { color: var(--text-muted); font-size: 10px; margin-bottom: 4px; }
+#globe-tooltip .tooltip-status { font-size: 10px; letter-spacing: 0.08em; }
 
 /* City tooltip */
 #map-tooltip {
@@ -1048,15 +1144,27 @@ body::after {
   <section id="map-section">
     <div class="map-header">
       <div class="map-title"><span>◉</span> GLOBAL INTELLIGENCE NETWORK</div>
-      <div class="map-coords" id="map-coords">LAT: ---.-- | LON: ---.--</div>
+      <div style="display:flex;align-items:center;gap:14px">
+        <div class="map-coords" id="map-coords">LAT: ---.-- | LON: ---.--</div>
+        <div class="map-view-toggle">
+          <button class="map-view-btn active" id="btn-view-2d" title="2D Mercator Map">2D</button>
+          <button class="map-view-btn" id="btn-view-3d" title="3D Interactive Globe">3D</button>
+        </div>
+      </div>
     </div>
     <canvas id="worldmap"></canvas>
+    <div id="globe-container"></div>
     <div id="map-tooltip">
       <div class="tooltip-city" id="tt-city">City</div>
       <div class="tooltip-coords" id="tt-coords">0.00° N, 0.00° E</div>
       <div class="tooltip-status" id="tt-status">STATUS: MONITORING</div>
     </div>
-    <div class="map-legend">
+    <div id="globe-tooltip">
+      <div class="tooltip-city" id="gt-city">City</div>
+      <div class="tooltip-coords" id="gt-coords">0.00° N, 0.00° E</div>
+      <div class="tooltip-status" id="gt-status">STATUS: MONITORING</div>
+    </div>
+    <div class="map-legend" id="map-legend-2d">
       <span class="map-legend-title">THREAT LEVEL:</span>
       <span class="legend-item"><span class="legend-dot" style="background:#00e5a0"></span>STABLE</span>
       <span class="legend-item"><span class="legend-dot" style="background:#1a8fff"></span>MONITORING</span>
@@ -1065,6 +1173,23 @@ body::after {
       <span class="legend-item" style="margin-left:auto;color:var(--text-muted);font-size:9px">
         ◈ HOVER MARKERS FOR DETAIL
       </span>
+    </div>
+    <div class="map-legend" id="map-legend-3d" style="display:none">
+      <span class="map-legend-title">THREAT LEVEL:</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#00e5a0"></span>STABLE</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#1a8fff"></span>MONITORING</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#f5a623"></span>ELEVATED</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#ff3c58"></span>CRITICAL</span>
+      <span class="legend-item" style="margin-left:auto;color:var(--text-muted);font-size:9px">
+        ◈ DRAG TO ROTATE · SCROLL TO ZOOM · CLICK MARKER FOR DETAIL
+      </span>
+    </div>
+    <div class="globe-data-bar" id="globe-data-bar" style="display:none">
+      <div class="globe-data-item"><strong>23</strong> Intel Points</div>
+      <div class="globe-data-item" style="color:var(--border-mid)">|</div>
+      <div class="globe-data-item"><strong>437</strong> Feeds</div>
+      <div class="globe-data-item" style="color:var(--border-mid)">|</div>
+      <div class="globe-data-item"><strong>15</strong> Domains</div>
     </div>
   </section>
 
@@ -1865,6 +1990,245 @@ Promise.all([loadStatus(), loadTemplates(), loadHistory()]).then(function() {
 setInterval(function() {
   loadHistory();
 }, 60000);
+
+/* ============================================================
+   MAP VIEW TOGGLE — 2D / 3D
+   ============================================================ */
+var globeInstance = null;
+var globeInitialized = false;
+var globeLibLoaded = false;
+
+var btn2d = document.getElementById('btn-view-2d');
+var btn3d = document.getElementById('btn-view-3d');
+var globeContainer = document.getElementById('globe-container');
+var legend2d = document.getElementById('map-legend-2d');
+var legend3d = document.getElementById('map-legend-3d');
+var globeDataBar = document.getElementById('globe-data-bar');
+var globeTooltip = document.getElementById('globe-tooltip');
+
+function switchTo2D() {
+  btn2d.classList.add('active');
+  btn3d.classList.remove('active');
+  canvas.style.display = 'block';
+  globeContainer.style.display = 'none';
+  legend2d.style.display = 'flex';
+  legend3d.style.display = 'none';
+  globeDataBar.style.display = 'none';
+  globeTooltip.classList.remove('visible');
+  document.getElementById('map-coords').textContent = 'LAT: ---.-- | LON: ---.--';
+  // Resume the 2D animation loop if it was cancelled
+  if (!mapRAF) {
+    startMapLoop();
+  }
+}
+
+function switchTo3D() {
+  btn3d.classList.add('active');
+  btn2d.classList.remove('active');
+  canvas.style.display = 'none';
+  globeContainer.style.display = 'block';
+  legend2d.style.display = 'none';
+  legend3d.style.display = 'flex';
+  globeDataBar.style.display = 'flex';
+  document.getElementById('map-coords').textContent = 'LAT: ---.-- | LON: ---.--';
+
+  if (!globeLibLoaded) {
+    loadGlobeLib(function() {
+      globeLibLoaded = true;
+      initGlobe();
+    });
+  } else if (!globeInitialized) {
+    initGlobe();
+  } else if (globeInstance) {
+    // Resume auto-rotation
+    globeInstance.controls().autoRotate = true;
+  }
+}
+
+function loadGlobeLib(callback) {
+  // Inject globe.gl script on demand
+  var script = document.createElement('script');
+  script.src = 'https://unpkg.com/globe.gl';
+  script.onload = callback;
+  script.onerror = function() {
+    console.error('[globe] Failed to load globe.gl from CDN');
+    logLine('Globe.gl CDN load failed.', 'err');
+  };
+  document.head.appendChild(script);
+}
+
+function initGlobe() {
+  if (globeInitialized) return;
+  globeInitialized = true;
+
+  // Set a fixed height for the globe container to match 2D canvas proportions
+  var containerW = globeContainer.clientWidth;
+  var containerH = Math.min(Math.round(containerW * 0.44), 500);
+  globeContainer.style.height = containerH + 'px';
+
+  // Fetch the same land.json used by 2D map
+  fetch('land.json').then(function(r) { return r.json(); }).then(function(topo) {
+
+    // Decode TopoJSON → GeoJSON features for globe.gl hexPolygons
+    // globe.gl expects GeoJSON FeatureCollection for hexPolygonsData
+    // We reconstruct from the topo arcs
+    var tf = topo.transform;
+    var scale = tf.scale, translate = tf.translate;
+
+    var decodedArcs = topo.arcs.map(function(arc) {
+      var x = 0, y = 0;
+      return arc.map(function(d) {
+        x += d[0]; y += d[1];
+        return [x * scale[0] + translate[0], y * scale[1] + translate[1]];
+      });
+    });
+
+    function arcToCoords(idx) {
+      return idx >= 0
+        ? decodedArcs[idx].slice()
+        : decodedArcs[~idx].slice().reverse();
+    }
+
+    // Build GeoJSON features from TopoJSON land geometries
+    var features = [];
+    var geoms = topo.objects.land.geometries;
+    geoms.forEach(function(geom) {
+      if (geom.type === 'Polygon') {
+        var coords = geom.arcs.map(function(ring) {
+          var pts = [];
+          ring.forEach(function(idx) { pts = pts.concat(arcToCoords(idx)); });
+          return pts;
+        });
+        features.push({ type: 'Feature', properties: {}, geometry: { type: 'Polygon', coordinates: coords } });
+      } else if (geom.type === 'MultiPolygon') {
+        geom.arcs.forEach(function(poly) {
+          var coords = poly.map(function(ring) {
+            var pts = [];
+            ring.forEach(function(idx) { pts = pts.concat(arcToCoords(idx)); });
+            return pts;
+          });
+          features.push({ type: 'Feature', properties: {}, geometry: { type: 'Polygon', coordinates: coords } });
+        });
+      }
+    });
+
+    buildGlobe({ type: 'FeatureCollection', features: features });
+
+  }).catch(function(e) {
+    console.error('[globe] land.json load failed:', e);
+    // Init globe with empty land — markers still shown
+    buildGlobe({ type: 'FeatureCollection', features: [] });
+  });
+}
+
+function buildGlobe(geoJson) {
+  if (typeof Globe === 'undefined') {
+    console.error('[globe] Globe constructor not available');
+    logLine('Globe library not ready.', 'err');
+    return;
+  }
+
+  var containerW = globeContainer.clientWidth;
+  var containerH = Math.min(Math.round(containerW * 0.44), 500);
+  globeContainer.style.height = containerH + 'px';
+
+  var g = Globe()
+    .width(containerW)
+    .height(containerH)
+    .backgroundColor('rgba(0,0,0,0)')
+    .globeImageUrl('')
+    .atmosphereColor('#1a8fff')
+    .atmosphereAltitude(0.22)
+    // Hex polygon land layer
+    .hexPolygonsData(geoJson.features)
+    .hexPolygonResolution(3)
+    .hexPolygonMargin(0.3)
+    .hexPolygonColor(function() { return '#14375f'; })
+    // City point markers
+    .pointsData(CITIES)
+    .pointLat('lat')
+    .pointLng('lon')
+    .pointColor(function(d) { return THREAT_COLORS[d.threat] || '#1a8fff'; })
+    .pointRadius(0.45)
+    .pointAltitude(0.012)
+    .pointResolution(12)
+    .onPointClick(function(point) {
+      // same info as 2D tooltip — reuse globe tooltip as modal briefly
+      showGlobeTooltip(point, null, null);
+    })
+    .onPointHover(function(point) {
+      globeContainer.style.cursor = point ? 'pointer' : 'grab';
+      if (point) {
+        // Position tooltip near the center of the section
+        var rect = globeContainer.getBoundingClientRect();
+        showGlobeTooltip(point, rect.left + rect.width / 2, rect.top + rect.height / 2 - 40);
+      } else {
+        globeTooltip.classList.remove('visible');
+      }
+    })
+    (globeContainer);
+
+  globeInstance = g;
+
+  // Set globe surface base color (ocean) via Three.js material
+  try {
+    g.globeMaterial().color.set('#060a12');
+    g.globeMaterial().emissive.set('#060a12');
+    g.globeMaterial().emissiveIntensity = 1;
+  } catch(e) { /* non-critical */ }
+
+  // Auto-rotate, start centered on Europe/Middle East
+  var controls = g.controls();
+  controls.autoRotate = true;
+  controls.autoRotateSpeed = 0.6;
+  controls.enableZoom = true;
+  controls.enablePan = false;
+
+  // Point camera to Europe/Middle East: lat ~30, lon ~30
+  g.pointOfView({ lat: 30, lng: 30, altitude: 2.2 }, 1000);
+
+  logLine('3D globe initialized: ' + CITIES.length + ' markers, ' + geoJson.features.length + ' land polygons.', 'ok');
+
+  // Handle resize
+  window.addEventListener('resize', function() {
+    if (globeContainer.style.display !== 'none') {
+      var w = globeContainer.clientWidth;
+      var h = Math.min(Math.round(w * 0.44), 500);
+      globeContainer.style.height = h + 'px';
+      g.width(w).height(h);
+    }
+  });
+}
+
+function showGlobeTooltip(city, screenX, screenY) {
+  document.getElementById('gt-city').textContent = city.name;
+  document.getElementById('gt-coords').textContent =
+    Math.abs(city.lat).toFixed(1) + '° ' + (city.lat >= 0 ? 'N' : 'S') + ', ' +
+    Math.abs(city.lon).toFixed(1) + '° ' + (city.lon >= 0 ? 'E' : 'W');
+  var col = THREAT_COLORS[city.threat] || '#1a8fff';
+  document.getElementById('gt-status').innerHTML =
+    'STATUS: <span style="color:' + col + '">' + city.threat.toUpperCase() + '</span>';
+
+  if (screenX !== null && screenY !== null) {
+    globeTooltip.style.left = screenX + 'px';
+    globeTooltip.style.top  = screenY + 'px';
+  } else {
+    // Fallback: center of screen
+    var rect = globeContainer.getBoundingClientRect();
+    globeTooltip.style.left = (rect.left + rect.width / 2 - 70) + 'px';
+    globeTooltip.style.top  = (rect.top + rect.height / 2 - 60) + 'px';
+  }
+
+  globeTooltip.classList.add('visible');
+  // Auto-hide after 2.5s on click (no hover to dismiss on mobile)
+  clearTimeout(globeTooltip._hideTimer);
+  globeTooltip._hideTimer = setTimeout(function() {
+    globeTooltip.classList.remove('visible');
+  }, 2500);
+}
+
+btn2d.addEventListener('click', switchTo2D);
+btn3d.addEventListener('click', switchTo3D);
 
 })();
 </script>

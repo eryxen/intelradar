@@ -64,6 +64,7 @@ async function main() {
   console.log(`Active: ${process.env.TEMPLATES || "crypto,ai-tech"}`);
   console.log(`AI Provider: ${process.env.AI_PROVIDER || "claude"}`);
   console.log(`Language: ${process.env.LANGUAGE || "zh"}`);
+  console.log(`Breaking monitor: ${process.env.BREAKING_ENABLED !== "false" ? "ON" : "OFF"} (threshold=${process.env.BREAKING_THRESHOLD || "8"}, max ${process.env.BREAKING_MAX_PER_HOUR || "5"}/hr)`);
   console.log("");
 
   if (isOnce) {
