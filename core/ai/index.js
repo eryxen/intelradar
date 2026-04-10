@@ -2,10 +2,16 @@
  * AI routing layer — dispatches to configured provider.
  */
 const claudeProvider = require("./providers/claude");
+const claudeCliProvider = require("./providers/claude-cli");
 const openaiProvider = require("./providers/openai");
 const ollamaProvider = require("./providers/ollama");
 
-const providers = { claude: claudeProvider, openai: openaiProvider, ollama: ollamaProvider };
+const providers = {
+  claude: claudeProvider,
+  "claude-cli": claudeCliProvider,  // Max plan — no API key needed
+  openai: openaiProvider,
+  ollama: ollamaProvider,
+};
 
 function getProvider() {
   const name = process.env.AI_PROVIDER || "claude";
