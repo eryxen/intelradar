@@ -37,6 +37,9 @@ function start(port) {
       if (pathname === "/" || pathname === "/index.html") {
         return serve(res, path.join(__dirname, "..", "web", "index.html"), "text/html");
       }
+      if (pathname === "/land.json") {
+        return serve(res, path.join(__dirname, "..", "web", "land.json"), "application/json");
+      }
 
       res.writeHead(404); res.end("Not found");
     } catch (err) {

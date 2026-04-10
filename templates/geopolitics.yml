@@ -21,7 +21,7 @@ polymarket:
   tags: ["politics", "geopolitics", "war"]
 
 feeds:
-  # Think Tanks
+  # Think Tanks — US
   - name: Council on Foreign Relations
     url: https://www.cfr.org/rss/all
   - name: Brookings Institution
@@ -30,10 +30,42 @@ feeds:
     url: https://www.csis.org/analysis/feed
   - name: Carnegie Endowment
     url: https://carnegieendowment.org/rss/solr/?lang=en
+  - name: RAND Corporation
+    url: https://www.rand.org/blog.xml
+  - name: Atlantic Council
+    url: https://www.atlanticcouncil.org/feed/
+  - name: Wilson Center
+    url: https://www.wilsoncenter.org/rss.xml
+  - name: Stimson Center
+    url: https://www.stimson.org/feed/
+  - name: Heritage Foundation
+    url: https://www.heritage.org/rss/all-research
+  - name: Hudson Institute
+    url: https://www.hudson.org/feed
+
+  # Think Tanks — International
+  - name: IISS
+    url: https://www.iiss.org/rss
+  - name: Chatham House
+    url: https://www.chathamhouse.org/rss
+  - name: SIPRI
+    url: https://www.sipri.org/rss.xml
+  - name: Asia Society
+    url: https://asiasociety.org/feed
+  - name: Lowy Institute
+    url: https://www.lowyinstitute.org/the-interpreter/feed
+  - name: ECFR
+    url: https://ecfr.eu/feed/
+
+  # Analysis & Journals
   - name: Foreign Affairs
     url: https://www.foreignaffairs.com/rss.xml
   - name: Foreign Policy
     url: https://foreignpolicy.com/feed/
+  - name: The National Interest
+    url: https://nationalinterest.org/feed
+  - name: World Politics Review
+    url: https://www.worldpoliticsreview.com/feed/
 
   # Global Coverage
   - name: Al Jazeera
@@ -46,6 +78,20 @@ feeds:
     url: https://asia.nikkei.com/rss
   - name: BBC World
     url: https://feeds.bbci.co.uk/news/world/rss.xml
+
+  # Conflict & Security
+  - name: International Crisis Group
+    url: https://www.crisisgroup.org/feed
+  - name: ACLED
+    url: https://acleddata.com/feed/
+  - name: Bellingcat
+    url: https://www.bellingcat.com/feed/
+
+  # Arms & Trade
+  - name: SIPRI Blog
+    url: https://www.sipri.org/rss.xml
+  - name: Arms Control Wonk
+    url: https://www.armscontrolwonk.com/feed/
 
   # Wire Services
   - name: Reuters World

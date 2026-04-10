@@ -20,6 +20,7 @@ polymarket:
   tags: ["politics", "elections"]
 
 feeds:
+  # Major Wire Services
   - name: Reuters World
     url: https://www.reutersagency.com/feed/?taxonomy=best-sectors&post_type=best
   - name: BBC World
@@ -32,3 +33,61 @@ feeds:
     url: https://www.foreignaffairs.com/rss.xml
   - name: The Diplomat
     url: https://thediplomat.com/feed/
+
+  # US Politics
+  - name: Politico
+    url: https://www.politico.com/rss/politicopicks.xml
+  - name: The Hill
+    url: https://thehill.com/feed/
+  - name: NPR Politics
+    url: https://feeds.npr.org/1014/rss.xml
+  - name: FiveThirtyEight
+    url: https://fivethirtyeight.com/feed/
+
+  # Europe
+  - name: Euronews
+    url: https://www.euronews.com/rss
+  - name: Politico Europe
+    url: https://www.politico.eu/feed/
+  - name: The Guardian World
+    url: https://www.theguardian.com/world/rss
+  - name: DW News
+    url: https://rss.dw.com/rss/en/top
+
+  # Asia
+  - name: Nikkei Asia
+    url: https://asia.nikkei.com/rss
+  - name: South China Morning Post
+    url: https://www.scmp.com/rss/4/feed
+  - name: Channel News Asia
+    url: https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml
+  - name: The Japan Times
+    url: https://www.japantimes.co.jp/feed/
+
+  # Middle East
+  - name: Middle East Eye
+    url: https://www.middleeasteye.net/rss
+  - name: Times of Israel
+    url: https://www.timesofisrael.com/feed/
+  - name: Al-Monitor
+    url: https://www.al-monitor.com/rss
+
+  # Latin America
+  - name: Americas Quarterly
+    url: https://www.americasquarterly.org/feed/
+  - name: MercoPress
+    url: https://en.mercopress.com/rss
+
+  # Africa
+  - name: African Arguments
+    url: https://africanarguments.org/feed/
+  - name: The Africa Report
+    url: https://www.theafricareport.com/feed/
+
+  # South & Southeast Asia
+  - name: The Hindu
+    url: https://www.thehindu.com/news/feeder/default.rss
+  - name: Rappler (Philippines)
+    url: https://www.rappler.com/feed/
+  - name: Bangkok Post
+    url: https://www.bangkokpost.com/rss/data/topstories.xml

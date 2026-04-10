@@ -18,19 +18,50 @@ polymarket:
   tags: ["politics", "misinformation"]
 
 feeds:
+  # US Fact Checkers
   - name: PolitiFact
     url: https://www.politifact.com/rss/all/
   - name: Snopes
     url: https://www.snopes.com/feed/
   - name: FactCheck.org
     url: https://www.factcheck.org/feed/
-  - name: Full Fact (UK)
-    url: https://fullfact.org/feed/
-  - name: AFP Fact Check
-    url: https://factcheck.afp.com/feed
+  - name: Check Your Fact
+    url: https://checkyourfact.com/feed/
   - name: Lead Stories
     url: https://leadstories.com/feed/
   - name: Media Bias/Fact Check
     url: https://mediabiasfactcheck.com/feed/
-  - name: Check Your Fact
-    url: https://checkyourfact.com/feed/
+
+  # International
+  - name: Full Fact (UK)
+    url: https://fullfact.org/feed/
+  - name: AFP Fact Check
+    url: https://factcheck.afp.com/feed
+  - name: Reuters Fact Check
+    url: https://www.reuters.com/arc/outboundfeeds/v3/category/reuters-fact-check/?outputType=xml
+  - name: BBC Reality Check
+    url: https://feeds.bbci.co.uk/news/reality_check/rss.xml
+  - name: CORRECTIV (Germany)
+    url: https://correctiv.org/feed/
+  - name: Maldita (Spain)
+    url: https://maldita.es/feed/
+
+  # Digital & Platform
+  - name: Bellingcat
+    url: https://www.bellingcat.com/feed/
+  - name: First Draft News
+    url: https://firstdraftnews.org/feed/
+  - name: EUvsDisinfo
+    url: https://euvsdisinfo.eu/feed/
+  - name: Logically
+    url: https://www.logically.ai/articles/feed
+  - name: Misbar
+    url: https://misbar.com/en/rss
+  - name: Boom Live (India)
+    url: https://www.boomlive.in/rss
+  - name: Taiwan FactCheck Center
+    url: https://tfc-taiwan.org.tw/feed
+  - name: Africa Check
+    url: https://africacheck.org/feed/
+  - name: Poynter
+    url: https://www.poynter.org/feed/

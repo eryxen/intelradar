@@ -1,0 +1,75 @@
+name: Media & Entertainment
+description: Film, TV, music, streaming, gaming, and entertainment industry news
+language: en
+
+keywords:
+  - movie
+  - TV show
+  - streaming
+  - Netflix
+  - Disney
+  - box office
+  - gaming
+  - music
+  - celebrity
+  - entertainment
+
+polymarket:
+  tags: ["entertainment", "pop-culture"]
+
+feeds:
+  # Hollywood & Film
+  - name: Variety
+    url: https://variety.com/feed/
+  - name: Hollywood Reporter
+    url: https://www.hollywoodreporter.com/feed/
+  - name: Deadline
+    url: https://deadline.com/feed/
+  - name: IndieWire
+    url: https://www.indiewire.com/feed/
+  - name: Screen Rant
+    url: https://screenrant.com/feed/
+
+  # Streaming & TV
+  - name: What's on Netflix
+    url: https://www.whats-on-netflix.com/feed/
+  - name: Cord Cutters News
+    url: https://www.cordcuttersnews.com/feed/
+  - name: TV Line
+    url: https://tvline.com/feed/
+
+  # Gaming
+  - name: IGN
+    url: https://feeds.feedburner.com/ign/all
+  - name: Kotaku
+    url: https://kotaku.com/rss
+  - name: PC Gamer
+    url: https://www.pcgamer.com/rss/
+  - name: Polygon
+    url: https://www.polygon.com/rss/index.xml
+  - name: GameSpot
+    url: https://www.gamespot.com/feeds/news/
+
+  # Music
+  - name: Pitchfork
+    url: https://pitchfork.com/feed/feed-news/rss
+  - name: Rolling Stone
+    url: https://www.rollingstone.com/feed/
+
+  # Digital Media & Culture
+  - name: TechCrunch Entertainment
+    url: https://techcrunch.com/category/media-entertainment/feed/
+  - name: The Wrap
+    url: https://www.thewrap.com/feed/
+  - name: Vulture
+    url: https://www.vulture.com/feed/rss/index.xml
+  - name: AV Club
+    url: https://www.avclub.com/rss
+  - name: Collider
+    url: https://collider.com/feed/
+  - name: Den of Geek
+    url: https://www.denofgeek.com/feed/
+  - name: Billboard
+    url: https://www.billboard.com/feed/
+  - name: NME
+    url: https://www.nme.com/feed

@@ -18,6 +18,7 @@ polymarket:
   tags: ["sports"]
 
 feeds:
+  # General Sports
   - name: ESPN Top
     url: https://www.espn.com/espn/rss/news
   - name: BBC Sport
@@ -28,3 +29,77 @@ feeds:
     url: https://theathletic.com/feeds/rss/news/
   - name: Bleacher Report
     url: https://bleacherreport.com/articles/feed
+
+  # Football/Soccer
+  - name: BBC Football
+    url: https://feeds.bbci.co.uk/sport/football/rss.xml
+  - name: ESPN FC
+    url: https://www.espn.com/espn/rss/soccer/news
+  - name: Goal.com
+    url: https://www.goal.com/feeds/en/news
+  - name: FourFourTwo
+    url: https://www.fourfourtwo.com/feeds/all
+  - name: Transfermarkt News
+    url: https://rsshub.app/transfermarkt/news/en
+  - name: The Guardian Football
+    url: https://www.theguardian.com/football/rss
+
+  # NBA / Basketball
+  - name: ESPN NBA
+    url: https://www.espn.com/espn/rss/nba/news
+  - name: NBA.com News
+    url: https://www.nba.com/feeds/content/rss
+  - name: HoopsHype
+    url: https://hoopshype.com/feed/
+
+  # NFL / American Football
+  - name: ESPN NFL
+    url: https://www.espn.com/espn/rss/nfl/news
+  - name: NFL.com News
+    url: https://www.nfl.com/rss/rsslanding?searchString=home
+  - name: Pro Football Talk
+    url: https://profootballtalk.nbcsports.com/feed/
+
+  # F1 / Motorsport
+  - name: BBC F1
+    url: https://feeds.bbci.co.uk/sport/formula1/rss.xml
+  - name: Autosport
+    url: https://www.autosport.com/rss/feed/all
+  - name: RaceFans
+    url: https://www.racefans.net/feed/
+
+  # Tennis
+  - name: Tennis.com
+    url: https://www.tennis.com/feeds/rss
+  - name: ESPN Tennis
+    url: https://www.espn.com/espn/rss/tennis/news
+
+  # MMA / Combat Sports
+  - name: MMA Fighting
+    url: https://www.mmafighting.com/rss/current
+  - name: MMA Junkie
+    url: https://mmajunkie.usatoday.com/feed
+
+  # Cricket
+  - name: ESPNcricinfo
+    url: https://www.espncricinfo.com/rss/content/story/feeds/0.xml
+  - name: BBC Cricket
+    url: https://feeds.bbci.co.uk/sport/cricket/rss.xml
+
+  # Olympics & Track
+  - name: Inside the Games
+    url: https://www.insidethegames.biz/rss/all/news
+  - name: World Athletics
+    url: https://worldathletics.org/rss/news
+
+  # Boxing
+  - name: Boxing News
+    url: https://www.boxingnews24.com/feed/
+  - name: Bad Left Hook
+    url: https://www.badlefthook.com/rss/current
+
+  # Golf
+  - name: Golf Digest
+    url: https://www.golfdigest.com/feed/rss
+  - name: PGA Tour News
+    url: https://www.pgatour.com/feeds/rss

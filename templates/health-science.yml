@@ -1,0 +1,85 @@
+name: Health & Science
+description: Medical research, public health, pandemics, scientific discoveries, and biotech
+language: en
+
+keywords:
+  - health
+  - pandemic
+  - vaccine
+  - WHO
+  - FDA
+  - clinical trial
+  - cancer
+  - biotech
+  - CRISPR
+  - neuroscience
+  - space
+  - physics
+
+polymarket:
+  tags: ["science", "health"]
+
+feeds:
+  # Science Journals
+  - name: Nature News
+    url: https://www.nature.com/nature.rss
+  - name: Science Magazine
+    url: https://www.science.org/rss/news_current.xml
+  - name: PNAS
+    url: https://www.pnas.org/action/showFeed?type=etoc&feed=rss&jc=pnas
+  - name: Cell
+    url: https://www.cell.com/cell/current.rss
+  - name: arXiv Physics
+    url: https://rss.arxiv.org/rss/physics
+
+  # Medical & Health
+  - name: NEJM
+    url: https://www.nejm.org/action/showFeed?jc=nejm&type=etoc&feed=rss
+  - name: The Lancet
+    url: https://www.thelancet.com/rssfeed/lancet_current.xml
+  - name: STAT News
+    url: https://www.statnews.com/feed/
+  - name: BMJ News
+    url: https://www.bmj.com/rss/recent.xml
+  - name: Medscape
+    url: https://www.medscape.com/cx/rssfeeds/2685.xml
+
+  # Public Health
+  - name: WHO News
+    url: https://www.who.int/feeds/entity/news/en/rss.xml
+  - name: CDC Newsroom
+    url: https://tools.cdc.gov/api/v2/resources/media/132608.rss
+  - name: ProMED
+    url: https://promedmail.org/feed/
+  - name: CIDRAP
+    url: https://www.cidrap.umn.edu/rss.xml
+
+  # Science News
+  - name: Scientific American
+    url: https://rss.sciam.com/ScientificAmerican-Global
+  - name: New Scientist
+    url: https://www.newscientist.com/feed/home/
+  - name: Quanta Magazine
+    url: https://www.quantamagazine.org/feed/
+  - name: Ars Technica Science
+    url: https://feeds.arstechnica.com/arstechnica/science
+  - name: Phys.org
+    url: https://phys.org/rss-feed/
+  - name: Space.com
+    url: https://www.space.com/feeds/all
+
+  # Biotech & Pharma
+  - name: FierceBiotech
+    url: https://www.fiercebiotech.com/rss/xml
+  - name: Endpoints News
+    url: https://endpts.com/feed/
+  - name: BioPharma Dive
+    url: https://www.biopharmadive.com/feeds/news/
+
+  # Emerging Health
+  - name: FDA News
+    url: https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds
+  - name: Health Affairs Blog
+    url: https://www.healthaffairs.org/do/section/blog/feed/
+  - name: KFF Health News
+    url: https://kffhealthnews.org/feed/

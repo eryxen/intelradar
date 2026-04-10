@@ -21,6 +21,7 @@ polymarket:
   tags: ["economics", "finance"]
 
 feeds:
+  # Major Financial News
   - name: CNBC Top News
     url: https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114
   - name: Bloomberg Markets
@@ -33,3 +34,49 @@ feeds:
     url: https://finance.yahoo.com/news/rssindex
   - name: Investing.com
     url: https://www.investing.com/rss/news.rss
+
+  # Analysis & Commentary
+  - name: Seeking Alpha
+    url: https://seekingalpha.com/feed.xml
+  - name: Zero Hedge
+    url: https://feeds.feedburner.com/zerohedge/feed
+  - name: Wolf Street
+    url: https://wolfstreet.com/feed/
+  - name: Calculated Risk
+    url: https://www.calculatedriskblog.com/feeds/posts/default?alt=rss
+  - name: Naked Capitalism
+    url: https://www.nakedcapitalism.com/feed
+
+  # Central Banks & Macro
+  - name: Federal Reserve
+    url: https://www.federalreserve.gov/feeds/press_all.xml
+  - name: ECB Press
+    url: https://www.ecb.europa.eu/rss/press.html
+  - name: Bank of England
+    url: https://www.bankofengland.co.uk/rss/news
+  - name: IMF Blog
+    url: https://www.imf.org/en/Blogs/rss
+  - name: World Bank Blog
+    url: https://blogs.worldbank.org/feed
+
+  # Commodities & Forex
+  - name: Kitco Gold News
+    url: https://www.kitco.com/feed/rss/news/
+  - name: OilPrice.com
+    url: https://oilprice.com/rss/main
+  - name: Forex Factory
+    url: https://www.forexfactory.com/feed.php
+  - name: DailyFX
+    url: https://www.dailyfx.com/feeds/all
+  - name: Barron's
+    url: https://www.barrons.com/feed
+  - name: Motley Fool
+    url: https://www.fool.com/feeds/index.aspx
+  - name: Investor's Business Daily
+    url: https://www.investors.com/feed/
+  - name: Financial Post
+    url: https://financialpost.com/feed
+  - name: Nikkei Markets
+    url: https://asia.nikkei.com/rss/feed/nar
+  - name: Caixin Global
+    url: https://www.caixinglobal.com/feed/

@@ -23,6 +23,28 @@ feeds:
     url: https://www.huxiu.com/rss/0.xml
   - name: 机器之心
     url: https://rsshub.app/jiqizhixin/latest
+  - name: 少数派
+    url: https://rsshub.app/sspai/matrix
+  - name: IT之家
+    url: https://rsshub.app/ithome/it
+  - name: 品玩
+    url: https://rsshub.app/pingwest/status
+  - name: 极客公园
+    url: https://rsshub.app/geekpark/breakingnews
+  - name: 爱范儿
+    url: https://rsshub.app/ifanr/app
+
+  # 财经 & 商业
+  - name: 澎湃新闻
+    url: https://rsshub.app/thepaper/newsDetail/25
+  - name: 财新网
+    url: https://rsshub.app/caixin/latest
+  - name: 第一财经
+    url: https://rsshub.app/yicai/brief
+  - name: 华尔街见闻
+    url: https://rsshub.app/wallstreetcn/live/global
+  - name: 东方财富
+    url: https://rsshub.app/eastmoney/report/info
 
   # 国际中文
   - name: BBC中文
@@ -31,9 +53,43 @@ feeds:
     url: https://feedx.net/rss/nytimes.xml
   - name: 联合早报
     url: https://rsshub.app/zaobao/realtime/china
+  - name: 南华早报中文
+    url: https://rsshub.app/scmp/zh
+  - name: FT中文网
+    url: https://rsshub.app/ftchinese/channel/news
+  - name: 德国之声中文
+    url: https://rsshub.app/dw/zh
 
   # 加密中文
   - name: 金色财经
     url: https://rsshub.app/jinse/lives
   - name: PANews
     url: https://rsshub.app/panewslab/news
+  - name: 律动BlockBeats
+    url: https://rsshub.app/theblockbeats/newsflash
+  - name: 吴说区块链
+    url: https://rsshub.app/wublock/index
+
+  # 知识 & 社区
+  - name: 知乎日报
+    url: https://rsshub.app/zhihu/daily
+  - name: 观察者网
+    url: https://rsshub.app/guancha/headline
+  - name: 界面新闻
+    url: https://rsshub.app/jiemian/list/4
+  - name: 端传媒
+    url: https://rsshub.app/initium/latest/zh-hans
+  - name: 环球时报
+    url: https://rsshub.app/huanqiu/world
+  - name: 新浪科技
+    url: https://rsshub.app/sina/rollnews/finance
+  - name: 腾讯科技
+    url: https://rsshub.app/tencent/news/tech
+  - name: 凤凰网
+    url: https://rsshub.app/ifeng/news
+  - name: 中国日报
+    url: https://rsshub.app/chinadaily/english/china
+  - name: 参考消息
+    url: https://rsshub.app/cankaoxiaoxi/news
+  - name: 新华社
+    url: https://rsshub.app/xinhuanet/news

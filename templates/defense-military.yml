@@ -1,0 +1,81 @@
+name: Defense & Military
+description: Military affairs, defense industry, weapons systems, intelligence, and national security
+language: en
+
+keywords:
+  - military
+  - defense
+  - Pentagon
+  - weapons
+  - missile
+  - navy
+  - air force
+  - army
+  - intelligence
+  - NATO
+  - drone
+  - nuclear
+
+polymarket:
+  tags: ["politics", "war", "military"]
+
+feeds:
+  # Defense News
+  - name: Defense One
+    url: https://www.defenseone.com/rss/
+  - name: Breaking Defense
+    url: https://breakingdefense.com/feed/
+  - name: Defense News
+    url: https://www.defensenews.com/arc/outboundfeeds/rss/
+  - name: The War Zone (The Drive)
+    url: https://www.thedrive.com/the-war-zone/feed
+  - name: Janes
+    url: https://www.janes.com/feeds/news
+  - name: Military.com
+    url: https://www.military.com/rss-feeds
+
+  # Analysis & Commentary
+  - name: War on the Rocks
+    url: https://warontherocks.com/feed/
+  - name: The National Interest (Security)
+    url: https://nationalinterest.org/feed
+  - name: Lawfare
+    url: https://www.lawfaremedia.org/feed
+  - name: Modern War Institute
+    url: https://mwi.westpoint.edu/feed/
+  - name: RUSI
+    url: https://rusi.org/rss.xml
+
+  # Intelligence & Security
+  - name: The Cipher Brief
+    url: https://www.thecipherbrief.com/feed
+  - name: Spy Talk
+    url: https://www.spytalk.co/feed
+  - name: Just Security
+    url: https://www.justsecurity.org/feed/
+
+  # Nuclear & Strategic
+  - name: Arms Control Association
+    url: https://www.armscontrol.org/rss.xml
+  - name: Nuclear Threat Initiative
+    url: https://www.nti.org/feed/
+  - name: Federation of American Scientists
+    url: https://fas.org/feed/
+  - name: Bulletin of the Atomic Scientists
+    url: https://thebulletin.org/feed/
+
+  # Regional Military
+  - name: Stars and Stripes
+    url: https://www.stripes.com/rss
+  - name: Naval News
+    url: https://www.navalnews.com/feed/
+  - name: Air & Space Forces Magazine
+    url: https://www.airandspaceforces.com/feed/
+  - name: Army Times
+    url: https://www.armytimes.com/arc/outboundfeeds/rss/
+  - name: Task & Purpose
+    url: https://taskandpurpose.com/feed/
+  - name: USNI News
+    url: https://news.usni.org/feed
+  - name: Defense Post
+    url: https://www.thedefensepost.com/feed/

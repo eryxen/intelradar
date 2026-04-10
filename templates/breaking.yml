@@ -13,19 +13,60 @@ polymarket:
   tags: []
 
 feeds:
+  # Wire Services
   - name: Reuters Top News
     url: https://feeds.reuters.com/reuters/topNews
   - name: Reuters World
     url: https://feeds.reuters.com/reuters/worldNews
+  - name: AP Top News
+    url: https://rsshub.app/apnews/topics/apf-topnews
+  - name: AFP
+    url: https://www.france24.com/en/rss
+
+  # Major Broadcasters
   - name: BBC Top Stories
     url: https://feeds.bbci.co.uk/news/rss.xml
   - name: BBC World
     url: https://feeds.bbci.co.uk/news/world/rss.xml
+  - name: CNN Top Stories
+    url: https://rss.cnn.com/rss/edition.rss
   - name: Al Jazeera
     url: https://www.aljazeera.com/xml/rss/all.xml
   - name: NPR News
     url: https://feeds.npr.org/1001/rss.xml
   - name: The Guardian World
     url: https://www.theguardian.com/world/rss
-  - name: CNN Top Stories
-    url: https://rss.cnn.com/rss/edition.rss
+
+  # Regional Wires
+  - name: DW News
+    url: https://rss.dw.com/rss/en/top
+  - name: France 24
+    url: https://www.france24.com/en/rss
+  - name: NHK World
+    url: https://www3.nhk.or.jp/rss/news/cat0.xml
+  - name: ABC News
+    url: https://abcnews.go.com/abcnews/internationalheadlines
+  - name: Sky News
+    url: https://feeds.skynews.com/feeds/rss/world.xml
+
+  # Real-time Aggregators
+  - name: Google News World
+    url: https://news.google.com/rss/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx1YlY4U0FtVnVHZ0pWVXlnQVAB
+  - name: Euronews
+    url: https://www.euronews.com/rss
+  - name: ABC Australia
+    url: https://www.abc.net.au/news/feed/2942460/rss.xml
+  - name: CNA (Taiwan)
+    url: https://rsshub.app/cna/aall
+  - name: Yonhap (Korea)
+    url: https://en.yna.co.kr/RSS/news.xml
+  - name: Xinhua English
+    url: https://rsshub.app/xinhuanet/english
+  - name: TASS English
+    url: https://tass.com/rss/v2.xml
+  - name: Times of India
+    url: https://timesofindia.indiatimes.com/rssfeedstopstories.cms
+  - name: Dawn (Pakistan)
+    url: https://www.dawn.com/feeds/home
+  - name: Straits Times
+    url: https://www.straitstimes.com/news/world/rss.xml
