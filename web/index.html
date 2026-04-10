@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IntelRadar Dashboard</title>
+<style>
+  :root {
+    --bg: #0a0e17; --surface: #111827; --border: #1e293b;
+    --text: #e2e8f0; --muted: #64748b; --accent: #3b82f6;
+    --green: #22c55e; --red: #ef4444; --amber: #f59e0b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+  .header {
+    background: var(--surface); border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem; display: flex; align-items: center; gap: 1rem;
+  }
+  .header h1 { font-size: 1.2rem; }
+  .header .badge { background: var(--green); color: #000; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+  .header .version { color: var(--muted); font-size: 0.8rem; margin-left: auto; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 1.5rem; display: grid; gap: 1.5rem; }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem;
+  }
+  .card h2 { font-size: 0.9rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+  .stat { text-align: center; }
+  .stat .value { font-size: 2rem; font-weight: 700; color: var(--accent); }
+  .stat .label { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+
+  .templates { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .tpl-card {
+    background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 1rem;
+    cursor: pointer; transition: border-color 0.2s;
+  }
+  .tpl-card:hover { border-color: var(--accent); }
+  .tpl-card .name { font-weight: 600; margin-bottom: 0.25rem; }
+  .tpl-card .desc { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.5rem; }
+  .tpl-card .meta { font-size: 0.7rem; color: var(--muted); }
+  .tpl-card .meta span { color: var(--accent); }
+
+  .history-list { display: flex; flex-direction: column; gap: 0.75rem; }
+  .history-item {
+    background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 1rem;
+  }
+  .history-item .top { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+  .history-item .template-tag {
+    background: var(--accent); color: #fff; padding: 1px 6px; border-radius: 3px; font-size: 0.7rem;
+  }
+  .history-item .date { font-size: 0.75rem; color: var(--muted); }
+  .history-item .preview { font-size: 0.8rem; color: var(--muted); line-height: 1.4; }
+
+  .actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .btn {
+    background: var(--accent); color: #fff; border: none; padding: 0.6rem 1.2rem;
+    border-radius: 6px; cursor: pointer; font-family: inherit; font-size: 0.85rem;
+    transition: opacity 0.2s;
+  }
+  .btn:hover { opacity: 0.85; }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .btn.secondary { background: var(--border); }
+  .btn.danger { background: var(--red); }
+
+  .log { background: #000; border-radius: 6px; padding: 1rem; font-size: 0.75rem; color: var(--green); max-height: 200px; overflow-y: auto; white-space: pre-wrap; }
+
+  .empty { color: var(--muted); text-align: center; padding: 2rem; font-size: 0.85rem; }
+
+  @media (max-width: 600px) {
+    .container { padding: 0.75rem; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .templates { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <span style="font-size:1.5rem">📡</span>
+  <h1>IntelRadar</h1>
+  <span class="badge" id="status-badge">Loading...</span>
+  <span class="version" id="version"></span>
+</div>
+
+<div class="container">
+  <!-- Stats -->
+  <div class="card">
+    <h2>System Status</h2>
+    <div class="stats">
+      <div class="stat"><div class="value" id="s-uptime">--</div><div class="label">Uptime</div></div>
+      <div class="stat"><div class="value" id="s-templates">--</div><div class="label">Active Templates</div></div>
+      <div class="stat"><div class="value" id="s-provider">--</div><div class="label">AI Provider</div></div>
+      <div class="stat"><div class="value" id="s-schedule">--</div><div class="label">Schedule</div></div>
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <div class="card">
+    <h2>Actions</h2>
+    <div class="actions">
+      <button class="btn" onclick="triggerRun()">Run All Now</button>
+      <button class="btn secondary" onclick="refreshAll()">Refresh</button>
+    </div>
+    <div class="log" id="action-log" style="margin-top:1rem;display:none"></div>
+  </div>
+
+  <!-- Templates -->
+  <div class="card">
+    <h2>Domain Templates</h2>
+    <div class="templates" id="templates-grid"></div>
+  </div>
+
+  <!-- History -->
+  <div class="card">
+    <h2>Recent Briefings</h2>
+    <div class="history-list" id="history-list"></div>
+  </div>
+</div>
+
+<script>
+const API = window.location.origin;
+
+async function fetchJSON(path) {
+  const res = await fetch(API + path);
+  return res.json();
+}
+
+function formatUptime(secs) {
+  const h = Math.floor(secs / 3600);
+  const m = Math.floor((secs % 3600) / 60);
+  return h > 0 ? `${h}h ${m}m` : `${m}m`;
+}
+
+async function loadStatus() {
+  try {
+    const s = await fetchJSON('/api/status');
+    document.getElementById('status-badge').textContent = 'ONLINE';
+    document.getElementById('status-badge').style.background = 'var(--green)';
+    document.getElementById('version').textContent = `v${s.version}`;
+    document.getElementById('s-uptime').textContent = formatUptime(s.uptime);
+    document.getElementById('s-templates').textContent = s.templates.length;
+    document.getElementById('s-provider').textContent = s.aiProvider;
+    document.getElementById('s-schedule').textContent = s.schedule.split(' ').slice(1, 2).join('') + ':00';
+  } catch {
+    document.getElementById('status-badge').textContent = 'OFFLINE';
+    document.getElementById('status-badge').style.background = 'var(--red)';
+  }
+}
+
+async function loadTemplates() {
+  const grid = document.getElementById('templates-grid');
+  try {
+    const templates = await fetchJSON('/api/templates');
+    grid.innerHTML = templates.map(t => `
+      <div class="tpl-card" onclick="triggerTemplate('${t.name}')">
+        <div class="name">${t.displayName || t.name}</div>
+        <div class="desc">${t.description || ''}</div>
+        <div class="meta"><span>${t.feedCount || 0}</span> feeds &middot; <span>${(t.keywords || []).length}</span> keywords</div>
+      </div>
+    `).join('');
+  } catch { grid.innerHTML = '<div class="empty">Failed to load templates</div>'; }
+}
+
+async function loadHistory() {
+  const list = document.getElementById('history-list');
+  try {
+    const history = await fetchJSON('/api/history?limit=10');
+    if (!history.length) { list.innerHTML = '<div class="empty">No briefings yet. Run your first cycle!</div>'; return; }
+    list.innerHTML = history.map(h => `
+      <div class="history-item">
+        <div class="top">
+          <span class="template-tag">${h.template}</span>
+          <span class="date">${h.date}</span>
+        </div>
+        <div class="preview">${h.preview.replace(/<[^>]+>/g, '').slice(0, 200)}...</div>
+      </div>
+    `).join('');
+  } catch { list.innerHTML = '<div class="empty">Failed to load history</div>'; }
+}
+
+async function triggerRun() {
+  const log = document.getElementById('action-log');
+  log.style.display = 'block';
+  log.textContent = '> Triggering all templates...\n';
+  try {
+    const res = await fetch(API + '/api/trigger', { method: 'POST' });
+    const data = await res.json();
+    log.textContent += `> ${JSON.stringify(data)}\n> Running in background. Refresh in a few minutes to see results.`;
+  } catch (e) { log.textContent += `> Error: ${e.message}`; }
+}
+
+async function triggerTemplate(name) {
+  const log = document.getElementById('action-log');
+  log.style.display = 'block';
+  log.textContent = `> Triggering template: ${name}...\n`;
+  try {
+    const res = await fetch(API + '/api/trigger', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ template: name })
+    });
+    const data = await res.json();
+    log.textContent += `> ${JSON.stringify(data)}\n> Running in background.`;
+  } catch (e) { log.textContent += `> Error: ${e.message}`; }
+}
+
+function refreshAll() { loadStatus(); loadTemplates(); loadHistory(); }
+
+// Auto refresh every 60s
+refreshAll();
+setInterval(loadStatus, 60000);
+</script>
+</body>
+</html>

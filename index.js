@@ -43,6 +43,7 @@ if (fs.existsSync(configPath)) {
 const scheduler = require("./core/scheduler");
 const dedup = require("./core/dedup");
 const templateLoader = require("./core/template-loader");
+const webServer = require("./core/web-server");
 
 // Ensure data directory
 const dataDir = path.join(__dirname, "data");
@@ -74,6 +75,12 @@ async function main() {
 
   // Cron mode
   scheduler.start();
+
+  // Web dashboard
+  if (process.env.WEB_ENABLED !== "false") {
+    webServer.setScheduler(scheduler);
+    webServer.start(parseInt(process.env.WEB_PORT) || 3000);
+  }
 
   // Run immediately on start if configured
   const runOnStart = process.env.RUN_ON_START !== "false";

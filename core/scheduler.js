@@ -11,6 +11,8 @@ const templateLoader = require("./template-loader");
 const tg = require("./delivery/telegram");
 const discord = require("./delivery/discord");
 const webhook = require("./delivery/webhook");
+const fs = require("fs");
+const path = require("path");
 
 /**
  * Run one briefing cycle for a given template.
@@ -75,6 +77,11 @@ async function runOnce(template) {
   if (process.env.WEBHOOK_URL) {
     await webhook.send(fullBriefing, process.env.WEBHOOK_URL, { template: name });
   }
+
+  // Save to file for web dashboard history
+  const histFile = path.join(__dirname, "..", "data",
+    `briefing-${name}-${new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19)}.html`);
+  fs.writeFileSync(histFile, fullBriefing, "utf-8");
 
   return fullBriefing;
 }
