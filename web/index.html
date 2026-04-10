@@ -1832,7 +1832,47 @@ function renderTimeline(history) {
 }
 
 /* ============================================================
-   API CALLS
+   DEMO MODE — activates when no backend is running (GitHub Pages)
+   ============================================================ */
+var DEMO_MODE = false;
+
+var DEMO_STATUS = {
+  version: '0.1.0', uptime: 86400, aiProvider: 'claude-cli',
+  language: 'zh', schedule: '0 8,12,18,22 * * *',
+  templates: ['crypto','ai-tech','geopolitics','fintel','china-zh','breaking','cyber-security','defense-military','politics','sports','fact-check','energy-climate','health-science','finance','media-entertainment']
+};
+
+var DEMO_TEMPLATES = [
+  {name:'crypto',displayName:'Crypto & Web3',description:'Cryptocurrency, DeFi, NFT, blockchain industry news',feedCount:33,keywords:['bitcoin','ethereum','DeFi','NFT','stablecoin']},
+  {name:'ai-tech',displayName:'AI & Technology',description:'Artificial intelligence, LLMs, tech industry, startups',feedCount:45,keywords:['AI','LLM','GPT','Claude','OpenAI']},
+  {name:'geopolitics',displayName:'Geopolitics & Global Intel',description:'Think tank analysis, conflict tracking, diplomacy, sanctions',feedCount:32,keywords:['geopolitics','sanctions','NATO','conflict']},
+  {name:'fintel',displayName:'Financial Intelligence',description:'Central bank policy, macro economics, market signals',feedCount:29,keywords:['Fed','interest rate','inflation','bond']},
+  {name:'china-zh',displayName:'Chinese News',description:'Chinese tech, business, crypto, current affairs',feedCount:34,keywords:['AI','blockchain','finance','policy']},
+  {name:'breaking',displayName:'Breaking Wire News',description:'Real-time wire feeds from AP, Reuters, BBC, Al Jazeera',feedCount:25,keywords:['breaking','urgent','developing']},
+  {name:'cyber-security',displayName:'Cybersecurity',description:'Threats, vulnerabilities, zero-days, incident response',feedCount:30,keywords:['CVE','ransomware','zero-day','APT']},
+  {name:'defense-military',displayName:'Defense & Military',description:'Defense procurement, military operations, strategic analysis',feedCount:25,keywords:['Pentagon','NATO','missile','defense']},
+  {name:'politics',displayName:'Politics',description:'Global politics, elections, policy changes across regions',feedCount:28,keywords:['election','policy','diplomacy']},
+  {name:'sports',displayName:'Sports',description:'Major sports events, transfers, results worldwide',feedCount:32,keywords:['football','NBA','F1','tennis']},
+  {name:'fact-check',displayName:'Fact Check',description:'Global fact-checking from PolitiFact, Snopes, AFP, Bellingcat',feedCount:21,keywords:['fact check','misinformation','debunk']},
+  {name:'energy-climate',displayName:'Energy & Climate',description:'OPEC, renewables, carbon policy, climate science',feedCount:26,keywords:['oil','renewable','carbon','OPEC']},
+  {name:'health-science',displayName:'Health & Science',description:'Medical breakthroughs, WHO, Nature, Lancet, pandemics',feedCount:26,keywords:['WHO','vaccine','clinical trial']},
+  {name:'finance',displayName:'Finance & Markets',description:'Stock markets, commodities, forex, macro economics',feedCount:26,keywords:['stock','Fed','gold','S&P 500']},
+  {name:'media-entertainment',displayName:'Media & Entertainment',description:'Film, TV, streaming, gaming, music industry',feedCount:23,keywords:['Netflix','box office','gaming']}
+];
+
+var DEMO_HISTORY = [
+  {file:'briefing-crypto-2026-04-10.html',template:'crypto',date:'2026-04-10T20:38',preview:'BTC rebounds above $92K as institutional inflows surge. SEC signals new crypto regulatory framework expected by Q3. Polymarket shows 72% odds for spot ETH ETF approval.'},
+  {file:'briefing-ai-tech-2026-04-10.html',template:'ai-tech',date:'2026-04-10T20:40',preview:'Anthropic launches Claude 4.6 with 1M context. Google Gemini 3.1 Ultra debuts 2M token window. OpenAI reportedly in talks for $50B funding round.'},
+  {file:'briefing-geopolitics-2026-04-10.html',template:'geopolitics',date:'2026-04-10T18:00',preview:'NATO defense ministers meet on Eastern European posture. CSIS analysis flags South China Sea tensions escalation. Iran nuclear talks resume in Vienna.'},
+  {file:'briefing-china-zh-2026-04-10.html',template:'china-zh',date:'2026-04-10T12:00',preview:'36氪报道：AI大模型价格战加剧，多家厂商推出免费API。BBC中文：中美贸易谈判再陷僵局。金色财经：香港虚拟资产新规正式实施。'},
+  {file:'briefing-fintel-2026-04-10.html',template:'fintel',date:'2026-04-10T08:00',preview:'Fed minutes reveal split on rate trajectory. 10Y yield hits 4.8%. Bloomberg reports ECB considering emergency meeting. Gold surges past $3,200.'},
+  {file:'briefing-breaking-2026-04-10.html',template:'breaking',date:'2026-04-10T15:30',preview:'BREAKING: Reuters reports major cybersecurity breach at Fortune 500 company. AP: UN Security Council emergency session called. BBC: Earthquake magnitude 6.2 hits Mediterranean.'},
+  {file:'briefing-cyber-2026-04-09.html',template:'cyber-security',date:'2026-04-09T22:00',preview:'Critical zero-day in enterprise VPN disclosed. CISA issues emergency directive. Krebs on Security: New ransomware group targets healthcare sector.'},
+  {file:'briefing-defense-2026-04-09.html',template:'defense-military',date:'2026-04-09T18:00',preview:'Pentagon announces $12B procurement package. Jane\'s reports new submarine deployment in Pacific. Breaking Defense: NATO exercises begin in Baltic states.'}
+];
+
+/* ============================================================
+   API CALLS (with demo fallback)
    ============================================================ */
 function apiFetch(url, opts) {
   return fetch(url, opts || {}).then(function(r) {
@@ -1843,62 +1883,87 @@ function apiFetch(url, opts) {
 
 function loadStatus() {
   return apiFetch('/api/status').then(function(data) {
-    document.getElementById('s-provider').textContent = data.aiProvider || '--';
-    document.getElementById('s-lang').textContent = data.language || '--';
-    document.getElementById('s-schedule').textContent = data.schedule || '--';
-    document.getElementById('s-version').textContent = data.version || '--';
-    document.getElementById('version-badge').textContent = data.version || 'v0.1.0';
-    document.getElementById('footer').innerHTML =
-      'Powered by IntelRadar ' + (data.version || 'v0.1.0') +
-      '<span>|</span>Data from 80+ RSS sources<span>|</span>AI by Claude';
-    if (data.uptime) serverUptimeMs = Math.round(data.uptime * 1000);
-    logLine('Status loaded: ' + (data.aiProvider || 'unknown') + ' / ' + (data.schedule || 'unknown'), 'ok');
+    applyStatus(data);
   }).catch(function(e) {
-    logLine('Status unavailable: ' + e.message, 'warn');
+    DEMO_MODE = true;
+    applyStatus(DEMO_STATUS);
+    logLine('Demo mode: no backend detected', 'warn');
   });
+}
+
+function applyStatus(data) {
+  document.getElementById('s-provider').textContent = data.aiProvider || '--';
+  document.getElementById('s-lang').textContent = data.language || '--';
+  document.getElementById('s-schedule').textContent = data.schedule || '--';
+  document.getElementById('s-version').textContent = data.version || '--';
+  document.getElementById('version-badge').textContent = data.version || 'v0.1.0';
+  document.getElementById('footer').innerHTML =
+    'Powered by IntelRadar ' + (data.version || 'v0.1.0') +
+    '<span>|</span>437 RSS feeds across 15 domains<span>|</span>AI by Claude' +
+    (DEMO_MODE ? '<span>|</span><span style="color:#f5a623">DEMO MODE</span>' : '');
+  if (data.uptime) serverUptimeMs = Math.round(data.uptime * 1000);
+  logLine('Status: ' + (data.aiProvider || 'unknown') + ' / ' + (data.schedule || 'unknown'), 'ok');
 }
 
 function loadTemplates() {
   return apiFetch('/api/templates').then(function(data) {
-    var templates = Array.isArray(data) ? data : (data.templates || []);
-    renderTemplates(templates);
-    countUp(document.getElementById('stat-templates'), templates.length, 1200);
-    var totalFeeds = templates.reduce(function(s, t) { return s + (t.feedCount || 0); }, 0);
-    countUp(document.getElementById('stat-feeds'), totalFeeds, 1400);
-    countUp(document.getElementById('stat-markets'), Math.floor(totalFeeds * 0.4), 1600);
-    countUp(document.getElementById('stat-countries'), 23, 1800);
-    logLine('Templates loaded: ' + templates.length + ' active', 'ok');
-
-    // Build ticker from keywords
-    var headlines = DEFAULT_HEADLINES.slice();
-    templates.forEach(function(t) {
-      if (t.description) headlines.push(t.displayName + ': ' + t.description);
-    });
-    buildTicker(headlines);
+    applyTemplates(Array.isArray(data) ? data : (data.templates || []));
   }).catch(function(e) {
-    logLine('Templates unavailable: ' + e.message, 'warn');
-    buildTicker(DEFAULT_HEADLINES);
-    countUp(document.getElementById('stat-templates'), 0, 800);
-    countUp(document.getElementById('stat-feeds'), 0, 800);
+    if (DEMO_MODE) {
+      applyTemplates(DEMO_TEMPLATES);
+    } else {
+      logLine('Templates unavailable: ' + e.message, 'warn');
+      buildTicker(DEFAULT_HEADLINES);
+      countUp(document.getElementById('stat-templates'), 0, 800);
+      countUp(document.getElementById('stat-feeds'), 0, 800);
+    }
   });
+}
+
+function applyTemplates(templates) {
+  renderTemplates(templates);
+  countUp(document.getElementById('stat-templates'), templates.length, 1200);
+  var totalFeeds = templates.reduce(function(s, t) { return s + (t.feedCount || 0); }, 0);
+  countUp(document.getElementById('stat-feeds'), totalFeeds, 1400);
+  countUp(document.getElementById('stat-markets'), Math.floor(totalFeeds * 0.4), 1600);
+  countUp(document.getElementById('stat-countries'), 23, 1800);
+  logLine('Templates: ' + templates.length + ' domains, ' + totalFeeds + ' feeds', 'ok');
+  var headlines = DEFAULT_HEADLINES.slice();
+  templates.forEach(function(t) {
+    if (t.description) headlines.push(t.displayName + ': ' + t.description);
+  });
+  buildTicker(headlines);
 }
 
 function loadHistory() {
   return apiFetch('/api/history?limit=20').then(function(data) {
-    var history = Array.isArray(data) ? data : (data.history || []);
-    renderTimeline(history);
-    populateFeedFromHistory(history);
-    countUp(document.getElementById('stat-briefings'), history.length, 1000);
-    var latestDate = history.length ? (history[0].date || '').substr(0,10) : '--';
-    document.getElementById('stat-lastscan').textContent = latestDate;
-    logLine('History loaded: ' + history.length + ' briefings', 'ok');
+    applyHistory(Array.isArray(data) ? data : (data.history || []));
   }).catch(function(e) {
-    logLine('History unavailable: ' + e.message, 'warn');
-    populateFeedFromHistory([]);
+    if (DEMO_MODE) {
+      applyHistory(DEMO_HISTORY);
+    } else {
+      logLine('History unavailable: ' + e.message, 'warn');
+      populateFeedFromHistory([]);
+    }
   });
 }
 
+function applyHistory(history) {
+  renderTimeline(history);
+  populateFeedFromHistory(history);
+  countUp(document.getElementById('stat-briefings'), history.length, 1000);
+  var latestDate = history.length ? (history[0].date || '').substr(0,10) : '--';
+  document.getElementById('stat-lastscan').textContent = latestDate;
+  logLine('Briefings: ' + history.length + ' in history', 'ok');
+}
+
 function triggerTemplate(name) {
+  if (DEMO_MODE) {
+    logLine('Demo mode — deploy IntelRadar to run templates.', 'warn');
+    logLine('git clone https://github.com/eryxen/intelradar', 'info');
+    logLine('npm install && cp .env.example .env && node index.js --once', 'info');
+    return Promise.resolve();
+  }
   var body = name ? JSON.stringify({ template: name }) : JSON.stringify({});
   logLine('Triggering: ' + (name || 'ALL TEMPLATES') + '...', 'info');
   return apiFetch('/api/trigger', {
