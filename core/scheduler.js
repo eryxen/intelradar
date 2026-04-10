@@ -26,7 +26,7 @@ async function runOnce(template) {
   console.log(`[${ts()}] [${name}] collected ${rawArticles.length} raw articles`);
 
   // 2. Dedup
-  const newArticles = dedup.filterNew(rawArticles, name);
+  const newArticles = await dedup.filterNew(rawArticles, name);
   console.log(`[${ts()}] [${name}] ${newArticles.length} new (${rawArticles.length - newArticles.length} deduped)`);
 
   if (!newArticles.length) {
