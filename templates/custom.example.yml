@@ -1,0 +1,23 @@
+# Custom Template Example
+# Copy this file to create your own domain template
+# e.g. templates/gaming.yml
+
+name: Your Domain Name
+description: Brief description of what this template tracks
+language: zh  # zh | en | both
+
+keywords:
+  - keyword1
+  - keyword2
+  - keyword3
+
+# Polymarket tags for prediction market correlation (optional)
+polymarket:
+  tags: ["tag1", "tag2"]
+
+# RSS feeds to monitor
+feeds:
+  - name: Source Name
+    url: https://example.com/feed.xml
+  - name: Another Source
+    url: https://example.com/rss

@@ -1,0 +1,24 @@
+{
+  "name": "intelradar",
+  "version": "0.1.0",
+  "description": "AI-powered multi-source intelligence briefing bot with prediction market integration",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js --once",
+    "test": "node --test test/"
+  },
+  "keywords": ["news", "intelligence", "telegram", "bot", "ai", "rss", "polymarket", "osint", "briefing"],
+  "author": "Xen",
+  "license": "MIT",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.66.0",
+    "node-cron": "^3.0.3",
+    "rss-parser": "^3.13.0",
+    "yaml": "^2.6.0",
+    "sql.js": "^1.11.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

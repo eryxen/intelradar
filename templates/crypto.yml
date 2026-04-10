@@ -1,0 +1,38 @@
+name: Crypto & Web3
+description: Cryptocurrency, DeFi, NFT, blockchain industry news and market movements
+language: both
+
+keywords:
+  - bitcoin
+  - ethereum
+  - crypto
+  - DeFi
+  - blockchain
+  - NFT
+  - stablecoin
+  - exchange
+  - SEC regulation
+  - 加密货币
+  - 比特币
+  - 以太坊
+
+polymarket:
+  tags: ["crypto", "bitcoin", "ethereum"]
+
+feeds:
+  - name: CoinDesk
+    url: https://www.coindesk.com/arc/outboundfeeds/rss/
+  - name: CoinTelegraph
+    url: https://cointelegraph.com/rss
+  - name: The Block
+    url: https://www.theblock.co/rss.xml
+  - name: Decrypt
+    url: https://decrypt.co/feed
+  - name: Bitcoin Magazine
+    url: https://bitcoinmagazine.com/.rss/full/
+  - name: CryptoSlate
+    url: https://cryptoslate.com/feed/
+  - name: Blockworks
+    url: https://blockworks.co/feed
+  - name: DeFi Pulse (Blog)
+    url: https://www.defipulse.com/blog/rss.xml

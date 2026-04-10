@@ -1,0 +1,40 @@
+name: AI & Technology
+description: Artificial intelligence, LLMs, tech industry, startups, and product launches
+language: both
+
+keywords:
+  - AI
+  - LLM
+  - GPT
+  - Claude
+  - machine learning
+  - deep learning
+  - OpenAI
+  - Anthropic
+  - Google AI
+  - startup
+  - 人工智能
+  - 大模型
+
+polymarket:
+  tags: ["ai", "technology"]
+
+feeds:
+  - name: TechCrunch AI
+    url: https://techcrunch.com/category/artificial-intelligence/feed/
+  - name: The Verge AI
+    url: https://www.theverge.com/rss/ai-artificial-intelligence/index.xml
+  - name: Ars Technica AI
+    url: https://feeds.arstechnica.com/arstechnica/technology-lab
+  - name: MIT Technology Review
+    url: https://www.technologyreview.com/feed/
+  - name: VentureBeat AI
+    url: https://venturebeat.com/category/ai/feed/
+  - name: Hacker News (Best)
+    url: https://hnrss.org/best?points=100
+  - name: arXiv CS.AI
+    url: https://rss.arxiv.org/rss/cs.AI
+  - name: Anthropic Blog
+    url: https://www.anthropic.com/feed.xml
+  - name: OpenAI Blog
+    url: https://openai.com/blog/rss.xml

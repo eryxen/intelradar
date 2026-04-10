@@ -1,0 +1,30 @@
+name: PR Review
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          model: sonnet
+          prompt: |
+            Review this pull request:
+
+            1. Code quality: logic errors, edge cases, performance
+            2. Security: API key leaks, injection risks, dependency vulnerabilities
+            3. Style: consistency with existing codebase (CommonJS, no TypeScript)
+            4. Tests: suggest what tests should be added
+            5. Docs: flag if README/docs need updating
+
+            For small fixes: approve with suggestions.
+            For large changes: request changes and explain why.
+            Always be constructive and welcoming to contributors.
+            Respond in English.

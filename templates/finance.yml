@@ -1,0 +1,35 @@
+name: Finance & Markets
+description: Stock markets, central bank policy, commodities, forex, and macro economics
+language: both
+
+keywords:
+  - stock market
+  - Fed
+  - interest rate
+  - inflation
+  - S&P 500
+  - NASDAQ
+  - bond
+  - commodity
+  - gold
+  - oil
+  - 股市
+  - 美联储
+  - 利率
+
+polymarket:
+  tags: ["economics", "finance"]
+
+feeds:
+  - name: CNBC Top News
+    url: https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114
+  - name: Bloomberg Markets
+    url: https://feeds.bloomberg.com/markets/news.rss
+  - name: Financial Times
+    url: https://www.ft.com/?format=rss
+  - name: MarketWatch
+    url: https://feeds.marketwatch.com/marketwatch/topstories/
+  - name: Yahoo Finance
+    url: https://finance.yahoo.com/news/rssindex
+  - name: Investing.com
+    url: https://www.investing.com/rss/news.rss

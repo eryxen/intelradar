@@ -1,0 +1,39 @@
+# IntelRadar Configuration
+# Copy to config.yml and customize
+
+schedule:
+  cron: "0 8,12,18,22 * * *"    # 4x daily
+  timezone: Asia/Kuala_Lumpur
+  runOnStart: true               # Run once immediately on startup
+
+templates:
+  - crypto
+  - ai-tech
+
+briefing:
+  language: zh           # zh | en | both
+  maxArticles: 20        # Max articles per briefing
+  includePolymarket: true
+  format: detailed       # summary | detailed
+
+delivery:
+  telegram:
+    enabled: true
+    parseMode: HTML
+  discord:
+    enabled: false
+    webhookUrl: ""
+  webhook:
+    enabled: false
+    url: ""
+
+ai:
+  provider: claude       # claude | openai | ollama
+  filterModel: claude-haiku-4-5
+  summaryModel: claude-sonnet-4-6
+  temperature: 0.3
+  maxRetries: 2
+
+dedup:
+  enabled: true
+  windowHours: 48        # Ignore articles seen in last 48h

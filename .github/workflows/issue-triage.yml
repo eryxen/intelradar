@@ -1,0 +1,32 @@
+name: Issue Triage
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          model: haiku
+          prompt: |
+            Analyze this new issue and perform triage:
+
+            1. Classify: bug | feature | question | docs | duplicate
+            2. Priority: P0 (critical) | P1 (important) | P2 (normal) | P3 (low)
+            3. Check if it duplicates an existing open issue
+            4. For bugs: identify affected module (collectors, ai, delivery, templates, scheduler)
+            5. For features: estimate complexity (S/M/L/XL)
+            6. For questions: answer directly from docs/code if possible
+
+            Apply appropriate labels.
+            Write a brief, friendly response (bilingual: English + Chinese).
+            For questions, provide the answer — no need to wait for maintainer.
+            For P0/P1 bugs, add "urgent" label and mention @xen in comment.
+          allowed_tools: "Bash(git log),Bash(gh issue list),Bash(gh label create)"

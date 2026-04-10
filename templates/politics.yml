@@ -1,0 +1,34 @@
+name: Politics & Geopolitics
+description: Global politics, elections, policy changes, geopolitical tensions, and governance
+language: both
+
+keywords:
+  - election
+  - president
+  - sanctions
+  - NATO
+  - UN
+  - tariff
+  - war
+  - diplomacy
+  - policy
+  - 选举
+  - 地缘政治
+  - 制裁
+
+polymarket:
+  tags: ["politics", "elections"]
+
+feeds:
+  - name: Reuters World
+    url: https://www.reutersagency.com/feed/?taxonomy=best-sectors&post_type=best
+  - name: BBC World
+    url: https://feeds.bbci.co.uk/news/world/rss.xml
+  - name: Al Jazeera
+    url: https://www.aljazeera.com/xml/rss/all.xml
+  - name: AP News
+    url: https://rsshub.app/apnews/topics/apf-topnews
+  - name: Foreign Affairs
+    url: https://www.foreignaffairs.com/rss.xml
+  - name: The Diplomat
+    url: https://thediplomat.com/feed/

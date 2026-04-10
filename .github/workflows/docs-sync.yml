@@ -1,0 +1,32 @@
+name: Docs Sync
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'core/**'
+      - 'templates/**'
+      - 'index.js'
+      - 'package.json'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          model: haiku
+          prompt: |
+            Code changed on main. Check if documentation needs updating:
+
+            1. Is README.md feature list still accurate?
+            2. Does .env.example have all required variables?
+            3. Are template descriptions in README up to date?
+            4. Does CLAUDE.md architecture description match current code?
+
+            If updates are needed, make the changes and create a PR.
+            If everything is in sync, do nothing.

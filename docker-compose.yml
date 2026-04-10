@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  intelradar:
+    build: .
+    container_name: intelradar
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./data:/app/data          # Persist SQLite DB
+      - ./config.yml:/app/config.yml:ro  # Optional config
+    environment:
+      - NODE_ENV=production

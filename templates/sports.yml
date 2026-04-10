@@ -1,0 +1,30 @@
+name: Sports
+description: Major sports events, transfers, results, and betting-relevant news
+language: en
+
+keywords:
+  - football
+  - soccer
+  - NBA
+  - NFL
+  - tennis
+  - F1
+  - Premier League
+  - Champions League
+  - transfer
+  - injury
+
+polymarket:
+  tags: ["sports"]
+
+feeds:
+  - name: ESPN Top
+    url: https://www.espn.com/espn/rss/news
+  - name: BBC Sport
+    url: https://feeds.bbci.co.uk/sport/rss.xml
+  - name: Sky Sports
+    url: https://www.skysports.com/rss/12040
+  - name: The Athletic
+    url: https://theathletic.com/feeds/rss/news/
+  - name: Bleacher Report
+    url: https://bleacherreport.com/articles/feed

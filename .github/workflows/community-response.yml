@@ -1,0 +1,32 @@
+name: Community Response
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  respond:
+    if: |
+      contains(github.event.comment.body, '@claude') ||
+      contains(github.event.comment.body, '@intelradar-bot')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          model: haiku
+          prompt: |
+            A user mentioned @claude or @intelradar-bot in a comment.
+            Help them by:
+
+            1. Searching the codebase and docs for relevant answers
+            2. Responding in both English and Chinese
+            3. Linking to relevant docs/files
+            4. If you can't help, add label "needs-maintainer"
+            5. Be friendly, thank contributors for their interest
+
+            Do NOT make code changes. Only provide information.
+          allowed_tools: "Read,Grep,Glob"
