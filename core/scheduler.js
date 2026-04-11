@@ -74,7 +74,10 @@ async function runOnce(template) {
   });
 
   // 6. Deliver
-  const header = `📡 <b>IntelRadar | ${template.name}</b>\n\n`;
+  // Escape template name (though it comes from YAML, it could contain <)
+  const safeName = String(template.name || "").replace(/[<>&]/g, (c) =>
+    ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]));
+  const header = `📡 <b>IntelRadar | ${safeName}</b>\n\n`;
   const fullBriefing = header + briefing;
 
   if (process.env.TG_BOT_TOKEN && process.env.TG_CHANNEL_ID) {

@@ -5,6 +5,18 @@ const TelegramBot = require("node-telegram-bot-api");
 
 let bot = null;
 
+/**
+ * Escape HTML special characters to prevent injection from RSS content.
+ * Telegram's HTML parse mode supports a subset of tags — user-generated
+ * text must be escaped to prevent tag injection (e.g. malicious <a href>).
+ */
+function escapeHtml(str) {
+  return String(str || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
 function init() {
   const token = process.env.TG_BOT_TOKEN;
   if (!token) throw new Error("TG_BOT_TOKEN not set");
@@ -68,4 +80,4 @@ function splitMessage(text, maxLen) {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-module.exports = { send, notifyOwner };
+module.exports = { send, notifyOwner, escapeHtml };

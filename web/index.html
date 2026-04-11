@@ -193,7 +193,7 @@ body::after {
   display: flex;
   gap: 0;
   width: max-content;
-  animation: marquee 240s linear infinite;
+  animation: marquee 150s linear infinite;
 }
 
 .ticker-inner:hover { animation-play-state: paused; }
@@ -1185,11 +1185,11 @@ body::after {
       </span>
     </div>
     <div class="globe-data-bar" id="globe-data-bar" style="display:none">
-      <div class="globe-data-item"><strong>23</strong> Intel Points</div>
+      <div class="globe-data-item"><strong id="gdb-points">23</strong> Intel Points</div>
       <div class="globe-data-item" style="color:var(--border-mid)">|</div>
-      <div class="globe-data-item"><strong>437</strong> Feeds</div>
+      <div class="globe-data-item"><strong id="gdb-feeds">--</strong> Feeds</div>
       <div class="globe-data-item" style="color:var(--border-mid)">|</div>
-      <div class="globe-data-item"><strong>15</strong> Domains</div>
+      <div class="globe-data-item"><strong id="gdb-domains">--</strong> Domains</div>
     </div>
   </section>
 
@@ -1382,8 +1382,10 @@ var THREAT_COLORS = {
 };
 
 function lonLatToXY(lon, lat, w, h) {
+  // Clamp latitude to prevent Infinity/NaN at poles
+  var clampedLat = Math.max(-85, Math.min(85, lat));
   var x = (lon + 180) / 360 * w;
-  var latRad = lat * Math.PI / 180;
+  var latRad = clampedLat * Math.PI / 180;
   var mercN = Math.log(Math.tan(Math.PI/4 + latRad/2));
   var y = h/2 - (w * mercN / (2 * Math.PI));
   return [x, y];
@@ -1474,9 +1476,6 @@ function drawMap(ts) {
   sweepAngle += 0.008;
   var cx = mapW * 0.5, cy = mapH * 0.5;
   var sweepLen = Math.max(mapW, mapH) * 0.8;
-  var grad = ctx.createConicalGradient
-    ? null  // standard doesn't have conical — use workaround
-    : null;
 
   // Draw sweep as a filled arc segment
   ctx.save();
@@ -1927,6 +1926,11 @@ function applyTemplates(templates) {
   countUp(document.getElementById('stat-feeds'), totalFeeds, 1400);
   countUp(document.getElementById('stat-markets'), Math.floor(totalFeeds * 0.4), 1600);
   countUp(document.getElementById('stat-countries'), 23, 1800);
+  // Update globe data bar with real counts
+  var gdbFeeds = document.getElementById('gdb-feeds');
+  var gdbDomains = document.getElementById('gdb-domains');
+  if (gdbFeeds) gdbFeeds.textContent = totalFeeds;
+  if (gdbDomains) gdbDomains.textContent = templates.length;
   logLine('Templates: ' + templates.length + ' domains, ' + totalFeeds + ' feeds', 'ok');
   var headlines = DEFAULT_HEADLINES.slice();
   templates.forEach(function(t) {
@@ -2051,9 +2055,9 @@ Promise.all([loadStatus(), loadTemplates(), loadHistory()]).then(function() {
   logLine('Some subsystems offline.', 'warn');
 });
 
-// Refresh every 60 seconds
+// Refresh every 60 seconds — but only if backend is available
 setInterval(function() {
-  loadHistory();
+  if (!DEMO_MODE) loadHistory();
 }, 60000);
 
 /* ============================================================
@@ -2090,6 +2094,8 @@ function switchTo2D() {
 function switchTo3D() {
   btn3d.classList.add('active');
   btn2d.classList.remove('active');
+  // Cancel 2D animation to save CPU — was rendering behind hidden canvas
+  if (mapRAF) { cancelAnimationFrame(mapRAF); mapRAF = null; }
   canvas.style.display = 'none';
   globeContainer.style.display = 'block';
   legend2d.style.display = 'none';
@@ -2201,12 +2207,11 @@ function buildGlobe(geoJson) {
     .width(containerW)
     .height(containerH)
     .backgroundColor('rgba(0,0,0,0)')
-    .globeImageUrl('')
     .atmosphereColor('#1a8fff')
     .atmosphereAltitude(0.22)
-    // Hex polygon land layer
+    // Hex polygon land layer (resolution 2 for better first-paint performance)
     .hexPolygonsData(geoJson.features)
-    .hexPolygonResolution(3)
+    .hexPolygonResolution(2)
     .hexPolygonMargin(0.3)
     .hexPolygonColor(function() { return '#14375f'; })
     // City point markers

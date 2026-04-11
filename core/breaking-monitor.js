@@ -12,6 +12,7 @@ const { ask } = require("./ai/index");
 const dedup = require("./dedup");
 const templateLoader = require("./template-loader");
 const tg = require("./delivery/telegram");
+const { escapeHtml } = require("./delivery/telegram");
 const fs = require("fs");
 const path = require("path");
 
@@ -87,18 +88,25 @@ function timeAgo(isoDate) {
  * Format a breaking alert for Telegram (HTML).
  */
 function formatBreakingAlert(article, tzContext) {
-  const category = article.breakingCategory || "World";
+  // Escape all untrusted RSS-sourced strings to prevent HTML injection
+  const category = escapeHtml(article.breakingCategory || "World");
+  const headline = escapeHtml(article.breakingHeadline || article.title);
+  const summary = escapeHtml(article.breakingSummary || article.summary?.slice(0, 200) || "");
+  const source = escapeHtml(article.source);
+
   let msg = `\u{1F6A8} <b>BREAKING | ${category}</b>\n\n`;
-  msg += `<b>${article.breakingHeadline || article.title}</b>\n\n`;
-  msg += `${article.breakingSummary || article.summary?.slice(0, 200) || ""}\n\n`;
-  msg += `Source: ${article.source} | ${timeAgo(article.publishedAt)}`;
+  msg += `<b>${headline}</b>\n\n`;
+  msg += `${summary}\n\n`;
+  msg += `Source: ${source} | ${timeAgo(article.publishedAt)}`;
 
   if (tzContext) {
-    msg += `\n\u{1F30F} ${tzContext}`;
+    msg += `\n\u{1F30F} ${escapeHtml(tzContext)}`;
   }
 
   if (article.polymarketEvent) {
-    msg += `\n\u{1F52E} Related: <a href="${article.polymarketEvent.url}">${article.polymarketEvent.title}</a>`;
+    // URL goes inside href="" — escape but also sanity-check it's http(s)
+    const url = /^https?:\/\//.test(article.polymarketEvent.url) ? article.polymarketEvent.url : "#";
+    msg += `\n\u{1F52E} Related: <a href="${escapeHtml(url)}">${escapeHtml(article.polymarketEvent.title)}</a>`;
   }
 
   return msg;

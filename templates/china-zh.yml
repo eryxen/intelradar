@@ -1,5 +1,5 @@
 name: 中文新闻综合
-description: 中文科技、商业、加密货币、时事新闻聚合（通过 RSSHub 等网关）
+description: 中文科技、商业、加密货币、时事新闻聚合（优先原生 RSS，减少对 RSSHub 公共实例的依赖）
 language: zh
 
 keywords:
@@ -16,80 +16,44 @@ polymarket:
   tags: ["china", "crypto"]
 
 feeds:
-  # 科技 & 商业
+  # 科技 & 商业（原生 RSS）
   - name: 36氪
     url: https://36kr.com/feed
   - name: 虎嗅
     url: https://www.huxiu.com/rss/0.xml
-  - name: 机器之心
-    url: https://rsshub.app/jiqizhixin/latest
-  - name: 少数派
-    url: https://rsshub.app/sspai/matrix
-  - name: IT之家
-    url: https://rsshub.app/ithome/it
-  - name: 品玩
-    url: https://rsshub.app/pingwest/status
   - name: 极客公园
-    url: https://rsshub.app/geekpark/breakingnews
+    url: https://www.geekpark.net/rss
   - name: 爱范儿
-    url: https://rsshub.app/ifanr/app
+    url: https://www.ifanr.com/feed
 
-  # 财经 & 商业
-  - name: 澎湃新闻
-    url: https://rsshub.app/thepaper/newsDetail/25
-  - name: 财新网
-    url: https://rsshub.app/caixin/latest
-  - name: 第一财经
-    url: https://rsshub.app/yicai/brief
-  - name: 华尔街见闻
-    url: https://rsshub.app/wallstreetcn/live/global
-  - name: 东方财富
-    url: https://rsshub.app/eastmoney/report/info
-
-  # 国际中文
+  # 国际中文（原生）
   - name: BBC中文
     url: https://feeds.bbci.co.uk/zhongwen/simp/rss.xml
-  - name: 纽约时报中文
+  - name: 纽约时报中文（FeedX）
     url: https://feedx.net/rss/nytimes.xml
-  - name: 联合早报
-    url: https://rsshub.app/zaobao/realtime/china
-  - name: 南华早报中文
-    url: https://rsshub.app/scmp/zh
-  - name: FT中文网
-    url: https://rsshub.app/ftchinese/channel/news
-  - name: 德国之声中文
-    url: https://rsshub.app/dw/zh
+  - name: 法广RFI中文
+    url: https://www.rfi.fr/cn/rss
+  - name: 美国之音中文
+    url: https://www.voachinese.com/api/zmgqteo_oq
+
+  # 港台媒体
+  - name: 明报即时新闻
+    url: https://news.mingpao.com/rss/ins/s00001.xml
+  - name: 中央社(CNA)国际
+    url: https://feeds.feedburner.com/rsscna/intworld
+  - name: 联合新闻网
+    url: https://udn.com/rssfeed/news/2/6638?ch=news
 
   # 加密中文
-  - name: 金色财经
-    url: https://rsshub.app/jinse/lives
-  - name: PANews
-    url: https://rsshub.app/panewslab/news
-  - name: 律动BlockBeats
-    url: https://rsshub.app/theblockbeats/newsflash
-  - name: 吴说区块链
-    url: https://rsshub.app/wublock/index
+  - name: ODAILY星球日报
+    url: https://www.odaily.news/feed
+  - name: BlockBeats律动
+    url: https://www.theblockbeats.info/feed
+  - name: Foresight News
+    url: https://foresightnews.pro/feed.xml
 
-  # 知识 & 社区
-  - name: 知乎日报
-    url: https://rsshub.app/zhihu/daily
-  - name: 观察者网
-    url: https://rsshub.app/guancha/headline
-  - name: 界面新闻
-    url: https://rsshub.app/jiemian/list/4
-  - name: 端传媒
-    url: https://rsshub.app/initium/latest/zh-hans
-  - name: 环球时报
-    url: https://rsshub.app/huanqiu/world
-  - name: 新浪科技
-    url: https://rsshub.app/sina/rollnews/finance
-  - name: 腾讯科技
-    url: https://rsshub.app/tencent/news/tech
-  - name: 凤凰网
-    url: https://rsshub.app/ifeng/news
-  - name: 中国日报
-    url: https://rsshub.app/chinadaily/english/china
-  - name: 参考消息
-    url: https://rsshub.app/cankaoxiaoxi/news
-  - name: 新华社
-    url: https://rsshub.app/xinhuanet/news
+  # 备份：RSSHub 公共实例（可能不稳定）
+  - name: 机器之心 (RSSHub)
+    url: https://rsshub.app/jiqizhixin/latest
+  - name: 联合早报中国 (RSSHub)
+    url: https://rsshub.app/zaobao/realtime/china
