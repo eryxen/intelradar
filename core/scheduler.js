@@ -91,10 +91,11 @@ async function runOnce(template) {
     await webhook.send(fullBriefing, process.env.WEBHOOK_URL, { template: name });
   }
 
-  // Save to file for web dashboard history
+  // Save to file for web dashboard history (async, non-blocking)
   const histFile = path.join(__dirname, "..", "data",
     `briefing-${name}-${new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19)}.html`);
-  fs.writeFileSync(histFile, fullBriefing, "utf-8");
+  fs.promises.writeFile(histFile, fullBriefing, "utf-8").catch((e) =>
+    console.error(`[scheduler] history write error: ${e.message}`));
 
   return fullBriefing;
 }

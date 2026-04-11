@@ -161,7 +161,9 @@ async function scan() {
   // 4. AI scoring for breaking importance
   const threshold = parseInt(process.env.BREAKING_THRESHOLD) || 8;
   const model = process.env.AI_MODEL_FILTER || "claude-haiku-4-5";
-  const batch = newArticles.slice(0, 30).map((a, i) => ({
+  // Cap at 30 articles per cycle — anything beyond is too old to be "breaking"
+  const articlesToScore = newArticles.slice(0, 30);
+  const batch = articlesToScore.map((a, i) => ({
     idx: i,
     title: a.title,
     summary: a.summary?.slice(0, 200),
@@ -196,12 +198,12 @@ Return JSON array: [{"idx": 0, "score": 8, "category": "Markets", "headline_zh":
   let alertsSent = 0;
   let highlighted = 0;
 
-  for (let i = 0; i < newArticles.length; i++) {
+  for (let i = 0; i < articlesToScore.length; i++) {
     const info = scoreMap.get(i);
     if (!info) continue;
 
     const article = {
-      ...newArticles[i],
+      ...articlesToScore[i],
       breakingScore: info.score,
       breakingCategory: info.category,
       breakingHeadline: info.headline_zh,

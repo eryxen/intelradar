@@ -1,0 +1,3429 @@
+{
+  "total": 435,
+  "passed": 250,
+  "failed": 185,
+  "byTemplate": {
+    "ai-tech.yml": {
+      "pass": 36,
+      "fail": 9,
+      "failures": [
+        {
+          "template": "ai-tech.yml",
+          "name": "Anthropic Blog",
+          "url": "https://www.anthropic.com/feed.xml",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 921
+        },
+        {
+          "template": "ai-tech.yml",
+          "name": "Meta AI Blog",
+          "url": "https://ai.meta.com/blog/rss/",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 2277
+        },
+        {
+          "template": "ai-tech.yml",
+          "name": "Microsoft Research",
+          "url": "https://www.microsoft.com/en-us/research/feed/",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 1181
+        },
+        {
+          "template": "ai-tech.yml",
+          "name": "The Batch (Andrew Ng)",
+          "url": "https://www.deeplearning.ai/the-batch/feed/",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 697
+        },
+        {
+          "template": "ai-tech.yml",
+          "name": "AnandTech",
+          "url": "https://www.anandtech.com/rss/",
+          "ok": false,
+          "error": "Attribute without value\nLine: 111\nColumn: 63\nChar: >",
+          "category": "other",
+          "ms": 8993
+        },
+        {
+          "template": "ai-tech.yml",
+          "name": "SemiAnalysis",
+          "url": "https://semianalysis.substack.com/feed",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10004
+        },
+        {
+          "template": "ai-tech.yml",
+          "name": "Samsung Semiconductor",
+          "url": "https://semiconductor.samsung.com/us/newsroom/rss/",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 7965
+        },
+        {
+          "template": "ai-tech.yml",
+          "name": "机器之心",
+          "url": "https://rsshub.app/jiqizhixin/latest",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 4005
+        },
+        {
+          "template": "ai-tech.yml",
+          "name": "量子位",
+          "url": "https://rsshub.app/qbitai/category/资讯",
+          "ok": false,
+          "error": "Request path contains unescaped characters",
+          "category": "other",
+          "ms": 1
+        }
+      ]
+    },
+    "breaking.yml": {
+      "pass": 17,
+      "fail": 8,
+      "failures": [
+        {
+          "template": "breaking.yml",
+          "name": "Reuters Top News",
+          "url": "https://feeds.reuters.com/reuters/topNews",
+          "ok": false,
+          "error": "getaddrinfo ENOTFOUND feeds.reuters.com",
+          "category": "dns",
+          "ms": 1373
+        },
+        {
+          "template": "breaking.yml",
+          "name": "Reuters World",
+          "url": "https://feeds.reuters.com/reuters/worldNews",
+          "ok": false,
+          "error": "getaddrinfo ENOTFOUND feeds.reuters.com",
+          "category": "dns",
+          "ms": 1350
+        },
+        {
+          "template": "breaking.yml",
+          "name": "AP Top News",
+          "url": "https://rsshub.app/apnews/topics/apf-topnews",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 4644
+        },
+        {
+          "template": "breaking.yml",
+          "name": "CNN Top Stories",
+          "url": "https://rss.cnn.com/rss/edition.rss",
+          "ok": false,
+          "error": "Client network socket disconnected before secure TLS connection was established",
+          "category": "ssl",
+          "ms": 2740
+        },
+        {
+          "template": "breaking.yml",
+          "name": "DW News",
+          "url": "https://rss.dw.com/rss/en/top",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 3751
+        },
+        {
+          "template": "breaking.yml",
+          "name": "Euronews",
+          "url": "https://www.euronews.com/rss",
+          "ok": false,
+          "error": "Non-whitespace before first tag.\nLine: 0\nColumn: 1\nChar: \u001f",
+          "category": "invalid_xml",
+          "ms": 2408
+        },
+        {
+          "template": "breaking.yml",
+          "name": "CNA (Taiwan)",
+          "url": "https://rsshub.app/cna/aall",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 2145
+        },
+        {
+          "template": "breaking.yml",
+          "name": "Xinhua English",
+          "url": "https://rsshub.app/xinhuanet/english",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 1720
+        }
+      ]
+    },
+    "china-zh.yml": {
+      "pass": 3,
+      "fail": 31,
+      "failures": [
+        {
+          "template": "china-zh.yml",
+          "name": "虎嗅",
+          "url": "https://www.huxiu.com/rss/0.xml",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10016
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "机器之心",
+          "url": "https://rsshub.app/jiqizhixin/latest",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 1209
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "少数派",
+          "url": "https://rsshub.app/sspai/matrix",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 1149
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "IT之家",
+          "url": "https://rsshub.app/ithome/it",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 1115
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "品玩",
+          "url": "https://rsshub.app/pingwest/status",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 1013
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "极客公园",
+          "url": "https://rsshub.app/geekpark/breakingnews",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 885
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "爱范儿",
+          "url": "https://rsshub.app/ifanr/app",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 871
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "澎湃新闻",
+          "url": "https://rsshub.app/thepaper/newsDetail/25",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 1247
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "财新网",
+          "url": "https://rsshub.app/caixin/latest",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 1236
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "第一财经",
+          "url": "https://rsshub.app/yicai/brief",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 516
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "华尔街见闻",
+          "url": "https://rsshub.app/wallstreetcn/live/global",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 505
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "东方财富",
+          "url": "https://rsshub.app/eastmoney/report/info",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 486
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "联合早报",
+          "url": "https://rsshub.app/zaobao/realtime/china",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 458
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "南华早报中文",
+          "url": "https://rsshub.app/scmp/zh",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 459
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "FT中文网",
+          "url": "https://rsshub.app/ftchinese/channel/news",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 455
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "德国之声中文",
+          "url": "https://rsshub.app/dw/zh",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 430
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "金色财经",
+          "url": "https://rsshub.app/jinse/lives",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 378
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "PANews",
+          "url": "https://rsshub.app/panewslab/news",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 381
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "律动BlockBeats",
+          "url": "https://rsshub.app/theblockbeats/newsflash",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 367
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "吴说区块链",
+          "url": "https://rsshub.app/wublock/index",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 422
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "知乎日报",
+          "url": "https://rsshub.app/zhihu/daily",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 600
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "观察者网",
+          "url": "https://rsshub.app/guancha/headline",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 594
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "界面新闻",
+          "url": "https://rsshub.app/jiemian/list/4",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 595
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "端传媒",
+          "url": "https://rsshub.app/initium/latest/zh-hans",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 594
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "环球时报",
+          "url": "https://rsshub.app/huanqiu/world",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 598
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "新浪科技",
+          "url": "https://rsshub.app/sina/rollnews/finance",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 477
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "腾讯科技",
+          "url": "https://rsshub.app/tencent/news/tech",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 498
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "凤凰网",
+          "url": "https://rsshub.app/ifeng/news",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 479
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "中国日报",
+          "url": "https://rsshub.app/chinadaily/english/china",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 478
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "参考消息",
+          "url": "https://rsshub.app/cankaoxiaoxi/news",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 618
+        },
+        {
+          "template": "china-zh.yml",
+          "name": "新华社",
+          "url": "https://rsshub.app/xinhuanet/news",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 602
+        }
+      ]
+    },
+    "crypto.yml": {
+      "pass": 19,
+      "fail": 14,
+      "failures": [
+        {
+          "template": "crypto.yml",
+          "name": "DeFi Pulse (Blog)",
+          "url": "https://www.defipulse.com/blog/rss.xml",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1102
+        },
+        {
+          "template": "crypto.yml",
+          "name": "Messari",
+          "url": "https://messari.io/rss",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1497
+        },
+        {
+          "template": "crypto.yml",
+          "name": "DeFi Llama News",
+          "url": "https://rsshub.app/defillama/news",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 1102
+        },
+        {
+          "template": "crypto.yml",
+          "name": "Rekt News",
+          "url": "https://rekt.news/feed.xml",
+          "ok": false,
+          "error": "Status code 500",
+          "category": "5xx",
+          "ms": 2005
+        },
+        {
+          "template": "crypto.yml",
+          "name": "Week in Ethereum",
+          "url": "https://weekinethereumnews.com/feed/",
+          "ok": false,
+          "error": "Hostname/IP does not match certificate's altnames: Host: weekinethereumnews.com. is not in the cert's altnames: DNS:*.ingress-florina.ewp.live, DNS:ingress-florina.ewp.live",
+          "category": "ssl",
+          "ms": 2304
+        },
+        {
+          "template": "crypto.yml",
+          "name": "Paradigm Blog",
+          "url": "https://www.paradigm.xyz/feed.xml",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1023
+        },
+        {
+          "template": "crypto.yml",
+          "name": "a16z Crypto",
+          "url": "https://a16zcrypto.com/feed/",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 891
+        },
+        {
+          "template": "crypto.yml",
+          "name": "CoinGecko Blog",
+          "url": "https://www.coingecko.com/en/news/feed",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1273
+        },
+        {
+          "template": "crypto.yml",
+          "name": "CryptoQuant Blog",
+          "url": "https://cryptoquant.com/blog/feed",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1014
+        },
+        {
+          "template": "crypto.yml",
+          "name": "Dune Analytics Blog",
+          "url": "https://dune.com/blog/rss.xml",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1142
+        },
+        {
+          "template": "crypto.yml",
+          "name": "L2Beat Blog",
+          "url": "https://l2beat.com/feed.xml",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 3243
+        },
+        {
+          "template": "crypto.yml",
+          "name": "Solana News",
+          "url": "https://solana.com/news/feed.xml",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1976
+        },
+        {
+          "template": "crypto.yml",
+          "name": "Foresight News",
+          "url": "https://rsshub.app/foresightnews/article",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 1965
+        },
+        {
+          "template": "crypto.yml",
+          "name": "ChainCatcher",
+          "url": "https://rsshub.app/chaincatcher/news",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 1967
+        }
+      ]
+    },
+    "cyber-security.yml": {
+      "pass": 20,
+      "fail": 10,
+      "failures": [
+        {
+          "template": "cyber-security.yml",
+          "name": "SC Magazine",
+          "url": "https://www.scmagazine.com/feed",
+          "ok": false,
+          "error": "Invalid character in entity name\nLine: 14\nColumn: 130291\nChar: &",
+          "category": "invalid_xml",
+          "ms": 6577
+        },
+        {
+          "template": "cyber-security.yml",
+          "name": "Google Project Zero",
+          "url": "https://googleprojectzero.blogspot.com/feeds/posts/default?alt=rss",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10017
+        },
+        {
+          "template": "cyber-security.yml",
+          "name": "Talos Intelligence",
+          "url": "https://blog.talosintelligence.com/feeds/posts/default?alt=rss",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 4935
+        },
+        {
+          "template": "cyber-security.yml",
+          "name": "Microsoft Security Blog",
+          "url": "https://www.microsoft.com/en-us/security/blog/feed/",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 3425
+        },
+        {
+          "template": "cyber-security.yml",
+          "name": "Mandiant Blog",
+          "url": "https://www.mandiant.com/resources/blog/rss.xml",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10018
+        },
+        {
+          "template": "cyber-security.yml",
+          "name": "NVD (NIST)",
+          "url": "https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml",
+          "ok": false,
+          "error": "Status code 406",
+          "category": "http_other",
+          "ms": 4120
+        },
+        {
+          "template": "cyber-security.yml",
+          "name": "Lawfare (Cyber)",
+          "url": "https://www.lawfaremedia.org/feed",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 3448
+        },
+        {
+          "template": "cyber-security.yml",
+          "name": "Rapid7 Blog",
+          "url": "https://blog.rapid7.com/rss/",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10003
+        },
+        {
+          "template": "cyber-security.yml",
+          "name": "Sophos News",
+          "url": "https://news.sophos.com/en-us/feed/",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10009
+        },
+        {
+          "template": "cyber-security.yml",
+          "name": "Kaspersky Securelist",
+          "url": "https://securelist.com/feed/",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10006
+        }
+      ]
+    },
+    "defense-military.yml": {
+      "pass": 10,
+      "fail": 15,
+      "failures": [
+        {
+          "template": "defense-military.yml",
+          "name": "Defense One",
+          "url": "https://www.defenseone.com/rss/",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1203
+        },
+        {
+          "template": "defense-military.yml",
+          "name": "The War Zone (The Drive)",
+          "url": "https://www.thedrive.com/the-war-zone/feed",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10003
+        },
+        {
+          "template": "defense-military.yml",
+          "name": "Janes",
+          "url": "https://www.janes.com/feeds/news",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1721
+        },
+        {
+          "template": "defense-military.yml",
+          "name": "Military.com",
+          "url": "https://www.military.com/rss-feeds",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 4310
+        },
+        {
+          "template": "defense-military.yml",
+          "name": "Lawfare",
+          "url": "https://www.lawfaremedia.org/feed",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 1779
+        },
+        {
+          "template": "defense-military.yml",
+          "name": "RUSI",
+          "url": "https://rusi.org/rss.xml",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10004
+        },
+        {
+          "template": "defense-military.yml",
+          "name": "The Cipher Brief",
+          "url": "https://www.thecipherbrief.com/feed",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10005
+        },
+        {
+          "template": "defense-military.yml",
+          "name": "Just Security",
+          "url": "https://www.justsecurity.org/feed/",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10002
+        },
+        {
+          "template": "defense-military.yml",
+          "name": "Bulletin of the Atomic Scientists",
+          "url": "https://thebulletin.org/feed/",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 5597
+        },
+        {
+          "template": "defense-military.yml",
+          "name": "Stars and Stripes",
+          "url": "https://www.stripes.com/rss",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 5066
+        },
+        {
+          "template": "defense-military.yml",
+          "name": "Naval News",
+          "url": "https://www.navalnews.com/feed/",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10003
+        },
+        {
+          "template": "defense-military.yml",
+          "name": "Air & Space Forces Magazine",
+          "url": "https://www.airandspaceforces.com/feed/",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10001
+        },
+        {
+          "template": "defense-military.yml",
+          "name": "Task & Purpose",
+          "url": "https://taskandpurpose.com/feed/",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10011
+        },
+        {
+          "template": "defense-military.yml",
+          "name": "USNI News",
+          "url": "https://news.usni.org/feed",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10004
+        },
+        {
+          "template": "defense-military.yml",
+          "name": "Defense Post",
+          "url": "https://www.thedefensepost.com/feed/",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10071
+        }
+      ]
+    },
+    "energy-climate.yml": {
+      "pass": 12,
+      "fail": 14,
+      "failures": [
+        {
+          "template": "energy-climate.yml",
+          "name": "Carbon Brief",
+          "url": "https://www.carbonbrief.org/feed/",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10005
+        },
+        {
+          "template": "energy-climate.yml",
+          "name": "Climate Home News",
+          "url": "https://www.climatechangenews.com/feed/",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10009
+        },
+        {
+          "template": "energy-climate.yml",
+          "name": "Yale Environment 360",
+          "url": "https://e360.yale.edu/feed",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 5903
+        },
+        {
+          "template": "energy-climate.yml",
+          "name": "Grist",
+          "url": "https://grist.org/feed/",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10006
+        },
+        {
+          "template": "energy-climate.yml",
+          "name": "The Guardian Environment",
+          "url": "https://www.theguardian.com/environment/rss",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10013
+        },
+        {
+          "template": "energy-climate.yml",
+          "name": "DeSmog",
+          "url": "https://www.desmog.com/feed/",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10009
+        },
+        {
+          "template": "energy-climate.yml",
+          "name": "IEA News",
+          "url": "https://www.iea.org/news/feed",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 7110
+        },
+        {
+          "template": "energy-climate.yml",
+          "name": "OilPrice.com",
+          "url": "https://oilprice.com/rss/main",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10010
+        },
+        {
+          "template": "energy-climate.yml",
+          "name": "Energy Voice",
+          "url": "https://www.energyvoice.com/feed/",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 6588
+        },
+        {
+          "template": "energy-climate.yml",
+          "name": "S&P Global Commodity Insights",
+          "url": "https://www.spglobal.com/commodityinsights/en/rss-feed",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 6242
+        },
+        {
+          "template": "energy-climate.yml",
+          "name": "CleanTechnica",
+          "url": "https://cleantechnica.com/feed/",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10003
+        },
+        {
+          "template": "energy-climate.yml",
+          "name": "IRENA News",
+          "url": "https://www.irena.org/rss",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 6674
+        },
+        {
+          "template": "energy-climate.yml",
+          "name": "World Nuclear News",
+          "url": "https://world-nuclear-news.org/feed",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 6764
+        },
+        {
+          "template": "energy-climate.yml",
+          "name": "Greentech Media",
+          "url": "https://www.greentechmedia.com/feed/",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10014
+        }
+      ]
+    },
+    "fact-check.yml": {
+      "pass": 11,
+      "fail": 10,
+      "failures": [
+        {
+          "template": "fact-check.yml",
+          "name": "FactCheck.org",
+          "url": "https://www.factcheck.org/feed/",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10007
+        },
+        {
+          "template": "fact-check.yml",
+          "name": "Lead Stories",
+          "url": "https://leadstories.com/feed/",
+          "ok": false,
+          "error": "Status code 406",
+          "category": "http_other",
+          "ms": 4844
+        },
+        {
+          "template": "fact-check.yml",
+          "name": "AFP Fact Check",
+          "url": "https://factcheck.afp.com/feed",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 3504
+        },
+        {
+          "template": "fact-check.yml",
+          "name": "Reuters Fact Check",
+          "url": "https://www.reuters.com/arc/outboundfeeds/v3/category/reuters-fact-check/?outputType=xml",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 3418
+        },
+        {
+          "template": "fact-check.yml",
+          "name": "CORRECTIV (Germany)",
+          "url": "https://correctiv.org/feed/",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10001
+        },
+        {
+          "template": "fact-check.yml",
+          "name": "Maldita (Spain)",
+          "url": "https://maldita.es/feed/",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10014
+        },
+        {
+          "template": "fact-check.yml",
+          "name": "Logically",
+          "url": "https://www.logically.ai/articles/feed",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10008
+        },
+        {
+          "template": "fact-check.yml",
+          "name": "Misbar",
+          "url": "https://misbar.com/en/rss",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 3711
+        },
+        {
+          "template": "fact-check.yml",
+          "name": "Taiwan FactCheck Center",
+          "url": "https://tfc-taiwan.org.tw/feed",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10007
+        },
+        {
+          "template": "fact-check.yml",
+          "name": "Africa Check",
+          "url": "https://africacheck.org/feed/",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 3556
+        }
+      ]
+    },
+    "finance.yml": {
+      "pass": 11,
+      "fail": 15,
+      "failures": [
+        {
+          "template": "finance.yml",
+          "name": "Bloomberg Markets",
+          "url": "https://feeds.bloomberg.com/markets/news.rss",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10002
+        },
+        {
+          "template": "finance.yml",
+          "name": "Financial Times",
+          "url": "https://www.ft.com/?format=rss",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10020
+        },
+        {
+          "template": "finance.yml",
+          "name": "MarketWatch",
+          "url": "https://feeds.marketwatch.com/marketwatch/topstories/",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10004
+        },
+        {
+          "template": "finance.yml",
+          "name": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/news/rssindex",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10007
+        },
+        {
+          "template": "finance.yml",
+          "name": "Investing.com",
+          "url": "https://www.investing.com/rss/news.rss",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10023
+        },
+        {
+          "template": "finance.yml",
+          "name": "Seeking Alpha",
+          "url": "https://seekingalpha.com/feed.xml",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10007
+        },
+        {
+          "template": "finance.yml",
+          "name": "Wolf Street",
+          "url": "https://wolfstreet.com/feed/",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10006
+        },
+        {
+          "template": "finance.yml",
+          "name": "Calculated Risk",
+          "url": "https://www.calculatedriskblog.com/feeds/posts/default?alt=rss",
+          "ok": false,
+          "error": "Request timed out after 10000ms",
+          "category": "timeout",
+          "ms": 10005
+        },
+        {
+          "template": "finance.yml",
+          "name": "IMF Blog",
+          "url": "https://www.imf.org/en/Blogs/rss",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 6395
+        },
+        {
+          "template": "finance.yml",
+          "name": "World Bank Blog",
+          "url": "https://blogs.worldbank.org/feed",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 7348
+        },
+        {
+          "template": "finance.yml",
+          "name": "Kitco Gold News",
+          "url": "https://www.kitco.com/feed/rss/news/",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 7537
+        },
+        {
+          "template": "finance.yml",
+          "name": "Forex Factory",
+          "url": "https://www.forexfactory.com/feed.php",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 4109
+        },
+        {
+          "template": "finance.yml",
+          "name": "DailyFX",
+          "url": "https://www.dailyfx.com/feeds/all",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 2924
+        },
+        {
+          "template": "finance.yml",
+          "name": "Barron's",
+          "url": "https://www.barrons.com/feed",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 4489
+        },
+        {
+          "template": "finance.yml",
+          "name": "Caixin Global",
+          "url": "https://www.caixinglobal.com/feed/",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1684
+        }
+      ]
+    },
+    "fintel.yml": {
+      "pass": 16,
+      "fail": 13,
+      "failures": [
+        {
+          "template": "fintel.yml",
+          "name": "Reuters Business",
+          "url": "https://feeds.reuters.com/reuters/businessNews",
+          "ok": false,
+          "error": "getaddrinfo ENOTFOUND feeds.reuters.com",
+          "category": "dns",
+          "ms": 751
+        },
+        {
+          "template": "fintel.yml",
+          "name": "Reuters Markets",
+          "url": "https://feeds.reuters.com/reuters/marketsNews",
+          "ok": false,
+          "error": "getaddrinfo ENOTFOUND feeds.reuters.com",
+          "category": "dns",
+          "ms": 521
+        },
+        {
+          "template": "fintel.yml",
+          "name": "Reserve Bank of Australia",
+          "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 315
+        },
+        {
+          "template": "fintel.yml",
+          "name": "People's Bank of China",
+          "url": "https://rsshub.app/gov/pboc/goutongjiaoliu",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 140
+        },
+        {
+          "template": "fintel.yml",
+          "name": "IMF Blog",
+          "url": "https://www.imf.org/en/Blogs/rss",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 104
+        },
+        {
+          "template": "fintel.yml",
+          "name": "World Bank Blog",
+          "url": "https://blogs.worldbank.org/feed",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 230
+        },
+        {
+          "template": "fintel.yml",
+          "name": "OECD Insights",
+          "url": "https://www.oecd.org/en/rss.xml",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 953
+        },
+        {
+          "template": "fintel.yml",
+          "name": "Peterson Institute",
+          "url": "https://www.piie.com/blogs/feed",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 389
+        },
+        {
+          "template": "fintel.yml",
+          "name": "CFTC",
+          "url": "https://www.cftc.gov/Newsroom/PressReleases/rss",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1299
+        },
+        {
+          "template": "fintel.yml",
+          "name": "Bridgewater Daily Observations",
+          "url": "https://www.bridgewater.com/feed",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1249
+        },
+        {
+          "template": "fintel.yml",
+          "name": "Ray Dalio Blog",
+          "url": "https://www.principles.com/blog/feed/",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1782
+        },
+        {
+          "template": "fintel.yml",
+          "name": "Fitch Ratings",
+          "url": "https://www.fitchratings.com/rss/sector/Sovereigns",
+          "ok": false,
+          "error": "Invalid character in entity name\nLine: 7\nColumn: 781138\nChar: =",
+          "category": "invalid_xml",
+          "ms": 2950
+        },
+        {
+          "template": "fintel.yml",
+          "name": "S&P Global Ratings",
+          "url": "https://www.spglobal.com/ratings/en/rss-feeds",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 251
+        }
+      ]
+    },
+    "geopolitics.yml": {
+      "pass": 14,
+      "fail": 18,
+      "failures": [
+        {
+          "template": "geopolitics.yml",
+          "name": "Council on Foreign Relations",
+          "url": "https://www.cfr.org/rss/all",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1151
+        },
+        {
+          "template": "geopolitics.yml",
+          "name": "Brookings Institution",
+          "url": "https://www.brookings.edu/feed/",
+          "ok": false,
+          "error": "Invalid character in entity name\nLine: 104\nColumn: 45\nChar: =",
+          "category": "invalid_xml",
+          "ms": 1362
+        },
+        {
+          "template": "geopolitics.yml",
+          "name": "CSIS",
+          "url": "https://www.csis.org/analysis/feed",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 168
+        },
+        {
+          "template": "geopolitics.yml",
+          "name": "Carnegie Endowment",
+          "url": "https://carnegieendowment.org/rss/solr/?lang=en",
+          "ok": false,
+          "error": "Feed not recognized as RSS 1 or 2.",
+          "category": "invalid_xml",
+          "ms": 944
+        },
+        {
+          "template": "geopolitics.yml",
+          "name": "Wilson Center",
+          "url": "https://www.wilsoncenter.org/rss.xml",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 525
+        },
+        {
+          "template": "geopolitics.yml",
+          "name": "Heritage Foundation",
+          "url": "https://www.heritage.org/rss/all-research",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 548
+        },
+        {
+          "template": "geopolitics.yml",
+          "name": "Hudson Institute",
+          "url": "https://www.hudson.org/feed",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1143
+        },
+        {
+          "template": "geopolitics.yml",
+          "name": "IISS",
+          "url": "https://www.iiss.org/rss",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 497
+        },
+        {
+          "template": "geopolitics.yml",
+          "name": "Chatham House",
+          "url": "https://www.chathamhouse.org/rss",
+          "ok": false,
+          "error": "Invalid character in entity name\nLine: 9\nColumn: 47\nChar: =",
+          "category": "invalid_xml",
+          "ms": 4186
+        },
+        {
+          "template": "geopolitics.yml",
+          "name": "SIPRI",
+          "url": "https://www.sipri.org/rss.xml",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 4115
+        },
+        {
+          "template": "geopolitics.yml",
+          "name": "Asia Society",
+          "url": "https://asiasociety.org/feed",
+          "ok": false,
+          "error": "Invalid character in entity name\nLine: 28\nColumn: 43\nChar: =",
+          "category": "invalid_xml",
+          "ms": 2805
+        },
+        {
+          "template": "geopolitics.yml",
+          "name": "Lowy Institute",
+          "url": "https://www.lowyinstitute.org/the-interpreter/feed",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 641
+        },
+        {
+          "template": "geopolitics.yml",
+          "name": "Nikkei Asia",
+          "url": "https://asia.nikkei.com/rss",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 868
+        },
+        {
+          "template": "geopolitics.yml",
+          "name": "International Crisis Group",
+          "url": "https://www.crisisgroup.org/feed",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1747
+        },
+        {
+          "template": "geopolitics.yml",
+          "name": "ACLED",
+          "url": "https://acleddata.com/feed/",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 2125
+        },
+        {
+          "template": "geopolitics.yml",
+          "name": "SIPRI Blog",
+          "url": "https://www.sipri.org/rss.xml",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 2909
+        },
+        {
+          "template": "geopolitics.yml",
+          "name": "Reuters World",
+          "url": "https://feeds.reuters.com/reuters/worldNews",
+          "ok": false,
+          "error": "getaddrinfo ENOTFOUND feeds.reuters.com",
+          "category": "dns",
+          "ms": 557
+        },
+        {
+          "template": "geopolitics.yml",
+          "name": "AP World",
+          "url": "https://rsshub.app/apnews/topics/apf-topnews",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 987
+        }
+      ]
+    },
+    "health-science.yml": {
+      "pass": 20,
+      "fail": 6,
+      "failures": [
+        {
+          "template": "health-science.yml",
+          "name": "Medscape",
+          "url": "https://www.medscape.com/cx/rssfeeds/2685.xml",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1442
+        },
+        {
+          "template": "health-science.yml",
+          "name": "WHO News",
+          "url": "https://www.who.int/feeds/entity/news/en/rss.xml",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1593
+        },
+        {
+          "template": "health-science.yml",
+          "name": "ProMED",
+          "url": "https://promedmail.org/feed/",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 2944
+        },
+        {
+          "template": "health-science.yml",
+          "name": "Scientific American",
+          "url": "https://rss.sciam.com/ScientificAmerican-Global",
+          "ok": false,
+          "error": "Client network socket disconnected before secure TLS connection was established",
+          "category": "ssl",
+          "ms": 1143
+        },
+        {
+          "template": "health-science.yml",
+          "name": "FDA News",
+          "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1272
+        },
+        {
+          "template": "health-science.yml",
+          "name": "Health Affairs Blog",
+          "url": "https://www.healthaffairs.org/do/section/blog/feed/",
+          "ok": false,
+          "error": "Attribute without value\nLine: 369\nColumn: 15\nChar: s",
+          "category": "other",
+          "ms": 5836
+        }
+      ]
+    },
+    "media-entertainment.yml": {
+      "pass": 22,
+      "fail": 1,
+      "failures": [
+        {
+          "template": "media-entertainment.yml",
+          "name": "Vulture",
+          "url": "https://www.vulture.com/feed/rss/index.xml",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1468
+        }
+      ]
+    },
+    "politics.yml": {
+      "pass": 22,
+      "fail": 6,
+      "failures": [
+        {
+          "template": "politics.yml",
+          "name": "Reuters World",
+          "url": "https://www.reutersagency.com/feed/?taxonomy=best-sectors&post_type=best",
+          "ok": false,
+          "error": "Status code 406",
+          "category": "http_other",
+          "ms": 1796
+        },
+        {
+          "template": "politics.yml",
+          "name": "AP News",
+          "url": "https://rsshub.app/apnews/topics/apf-topnews",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 505
+        },
+        {
+          "template": "politics.yml",
+          "name": "DW News",
+          "url": "https://rss.dw.com/rss/en/top",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1144
+        },
+        {
+          "template": "politics.yml",
+          "name": "Nikkei Asia",
+          "url": "https://asia.nikkei.com/rss",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1208
+        },
+        {
+          "template": "politics.yml",
+          "name": "Middle East Eye",
+          "url": "https://www.middleeasteye.net/rss",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 5554
+        },
+        {
+          "template": "politics.yml",
+          "name": "Times of Israel",
+          "url": "https://www.timesofisrael.com/feed/",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 529
+        }
+      ]
+    },
+    "sports.yml": {
+      "pass": 17,
+      "fail": 15,
+      "failures": [
+        {
+          "template": "sports.yml",
+          "name": "Bleacher Report",
+          "url": "https://bleacherreport.com/articles/feed",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 901
+        },
+        {
+          "template": "sports.yml",
+          "name": "Goal.com",
+          "url": "https://www.goal.com/feeds/en/news",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1566
+        },
+        {
+          "template": "sports.yml",
+          "name": "Transfermarkt News",
+          "url": "https://rsshub.app/transfermarkt/news/en",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 781
+        },
+        {
+          "template": "sports.yml",
+          "name": "NBA.com News",
+          "url": "https://www.nba.com/feeds/content/rss",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 797
+        },
+        {
+          "template": "sports.yml",
+          "name": "HoopsHype",
+          "url": "https://hoopshype.com/feed/",
+          "ok": false,
+          "error": "Status code 406",
+          "category": "http_other",
+          "ms": 1479
+        },
+        {
+          "template": "sports.yml",
+          "name": "NFL.com News",
+          "url": "https://www.nfl.com/rss/rsslanding?searchString=home",
+          "ok": false,
+          "error": "Attribute without value\nLine: 5\nColumn: 157183\nChar: i",
+          "category": "other",
+          "ms": 4145
+        },
+        {
+          "template": "sports.yml",
+          "name": "Tennis.com",
+          "url": "https://www.tennis.com/feeds/rss",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 534
+        },
+        {
+          "template": "sports.yml",
+          "name": "MMA Fighting",
+          "url": "https://www.mmafighting.com/rss/current",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1106
+        },
+        {
+          "template": "sports.yml",
+          "name": "MMA Junkie",
+          "url": "https://mmajunkie.usatoday.com/feed",
+          "ok": false,
+          "error": "Status code 406",
+          "category": "http_other",
+          "ms": 795
+        },
+        {
+          "template": "sports.yml",
+          "name": "Inside the Games",
+          "url": "https://www.insidethegames.biz/rss/all/news",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 284
+        },
+        {
+          "template": "sports.yml",
+          "name": "World Athletics",
+          "url": "https://worldathletics.org/rss/news",
+          "ok": false,
+          "error": "Feed not recognized as RSS 1 or 2.",
+          "category": "invalid_xml",
+          "ms": 843
+        },
+        {
+          "template": "sports.yml",
+          "name": "Boxing News",
+          "url": "https://www.boxingnews24.com/feed/",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 284
+        },
+        {
+          "template": "sports.yml",
+          "name": "Bad Left Hook",
+          "url": "https://www.badlefthook.com/rss/current",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1163
+        },
+        {
+          "template": "sports.yml",
+          "name": "Golf Digest",
+          "url": "https://www.golfdigest.com/feed/rss",
+          "ok": false,
+          "error": "Status code 403",
+          "category": "403",
+          "ms": 268
+        },
+        {
+          "template": "sports.yml",
+          "name": "PGA Tour News",
+          "url": "https://www.pgatour.com/feeds/rss",
+          "ok": false,
+          "error": "Status code 404",
+          "category": "404",
+          "ms": 1717
+        }
+      ]
+    }
+  },
+  "failures": [
+    {
+      "template": "ai-tech.yml",
+      "name": "Anthropic Blog",
+      "url": "https://www.anthropic.com/feed.xml",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 921
+    },
+    {
+      "template": "ai-tech.yml",
+      "name": "Meta AI Blog",
+      "url": "https://ai.meta.com/blog/rss/",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 2277
+    },
+    {
+      "template": "ai-tech.yml",
+      "name": "Microsoft Research",
+      "url": "https://www.microsoft.com/en-us/research/feed/",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 1181
+    },
+    {
+      "template": "ai-tech.yml",
+      "name": "The Batch (Andrew Ng)",
+      "url": "https://www.deeplearning.ai/the-batch/feed/",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 697
+    },
+    {
+      "template": "ai-tech.yml",
+      "name": "AnandTech",
+      "url": "https://www.anandtech.com/rss/",
+      "ok": false,
+      "error": "Attribute without value\nLine: 111\nColumn: 63\nChar: >",
+      "category": "other",
+      "ms": 8993
+    },
+    {
+      "template": "ai-tech.yml",
+      "name": "SemiAnalysis",
+      "url": "https://semianalysis.substack.com/feed",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10004
+    },
+    {
+      "template": "ai-tech.yml",
+      "name": "Samsung Semiconductor",
+      "url": "https://semiconductor.samsung.com/us/newsroom/rss/",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 7965
+    },
+    {
+      "template": "ai-tech.yml",
+      "name": "机器之心",
+      "url": "https://rsshub.app/jiqizhixin/latest",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 4005
+    },
+    {
+      "template": "ai-tech.yml",
+      "name": "量子位",
+      "url": "https://rsshub.app/qbitai/category/资讯",
+      "ok": false,
+      "error": "Request path contains unescaped characters",
+      "category": "other",
+      "ms": 1
+    },
+    {
+      "template": "breaking.yml",
+      "name": "Reuters Top News",
+      "url": "https://feeds.reuters.com/reuters/topNews",
+      "ok": false,
+      "error": "getaddrinfo ENOTFOUND feeds.reuters.com",
+      "category": "dns",
+      "ms": 1373
+    },
+    {
+      "template": "breaking.yml",
+      "name": "Reuters World",
+      "url": "https://feeds.reuters.com/reuters/worldNews",
+      "ok": false,
+      "error": "getaddrinfo ENOTFOUND feeds.reuters.com",
+      "category": "dns",
+      "ms": 1350
+    },
+    {
+      "template": "breaking.yml",
+      "name": "AP Top News",
+      "url": "https://rsshub.app/apnews/topics/apf-topnews",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 4644
+    },
+    {
+      "template": "breaking.yml",
+      "name": "CNN Top Stories",
+      "url": "https://rss.cnn.com/rss/edition.rss",
+      "ok": false,
+      "error": "Client network socket disconnected before secure TLS connection was established",
+      "category": "ssl",
+      "ms": 2740
+    },
+    {
+      "template": "breaking.yml",
+      "name": "DW News",
+      "url": "https://rss.dw.com/rss/en/top",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 3751
+    },
+    {
+      "template": "breaking.yml",
+      "name": "Euronews",
+      "url": "https://www.euronews.com/rss",
+      "ok": false,
+      "error": "Non-whitespace before first tag.\nLine: 0\nColumn: 1\nChar: \u001f",
+      "category": "invalid_xml",
+      "ms": 2408
+    },
+    {
+      "template": "breaking.yml",
+      "name": "CNA (Taiwan)",
+      "url": "https://rsshub.app/cna/aall",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 2145
+    },
+    {
+      "template": "breaking.yml",
+      "name": "Xinhua English",
+      "url": "https://rsshub.app/xinhuanet/english",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 1720
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "虎嗅",
+      "url": "https://www.huxiu.com/rss/0.xml",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10016
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "机器之心",
+      "url": "https://rsshub.app/jiqizhixin/latest",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 1209
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "少数派",
+      "url": "https://rsshub.app/sspai/matrix",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 1149
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "IT之家",
+      "url": "https://rsshub.app/ithome/it",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 1115
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "品玩",
+      "url": "https://rsshub.app/pingwest/status",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 1013
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "极客公园",
+      "url": "https://rsshub.app/geekpark/breakingnews",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 885
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "爱范儿",
+      "url": "https://rsshub.app/ifanr/app",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 871
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "澎湃新闻",
+      "url": "https://rsshub.app/thepaper/newsDetail/25",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 1247
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "财新网",
+      "url": "https://rsshub.app/caixin/latest",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 1236
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "第一财经",
+      "url": "https://rsshub.app/yicai/brief",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 516
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "华尔街见闻",
+      "url": "https://rsshub.app/wallstreetcn/live/global",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 505
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "东方财富",
+      "url": "https://rsshub.app/eastmoney/report/info",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 486
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "联合早报",
+      "url": "https://rsshub.app/zaobao/realtime/china",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 458
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "南华早报中文",
+      "url": "https://rsshub.app/scmp/zh",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 459
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "FT中文网",
+      "url": "https://rsshub.app/ftchinese/channel/news",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 455
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "德国之声中文",
+      "url": "https://rsshub.app/dw/zh",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 430
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "金色财经",
+      "url": "https://rsshub.app/jinse/lives",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 378
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "PANews",
+      "url": "https://rsshub.app/panewslab/news",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 381
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "律动BlockBeats",
+      "url": "https://rsshub.app/theblockbeats/newsflash",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 367
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "吴说区块链",
+      "url": "https://rsshub.app/wublock/index",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 422
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "知乎日报",
+      "url": "https://rsshub.app/zhihu/daily",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 600
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "观察者网",
+      "url": "https://rsshub.app/guancha/headline",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 594
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "界面新闻",
+      "url": "https://rsshub.app/jiemian/list/4",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 595
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "端传媒",
+      "url": "https://rsshub.app/initium/latest/zh-hans",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 594
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "环球时报",
+      "url": "https://rsshub.app/huanqiu/world",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 598
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "新浪科技",
+      "url": "https://rsshub.app/sina/rollnews/finance",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 477
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "腾讯科技",
+      "url": "https://rsshub.app/tencent/news/tech",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 498
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "凤凰网",
+      "url": "https://rsshub.app/ifeng/news",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 479
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "中国日报",
+      "url": "https://rsshub.app/chinadaily/english/china",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 478
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "参考消息",
+      "url": "https://rsshub.app/cankaoxiaoxi/news",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 618
+    },
+    {
+      "template": "china-zh.yml",
+      "name": "新华社",
+      "url": "https://rsshub.app/xinhuanet/news",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 602
+    },
+    {
+      "template": "crypto.yml",
+      "name": "DeFi Pulse (Blog)",
+      "url": "https://www.defipulse.com/blog/rss.xml",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1102
+    },
+    {
+      "template": "crypto.yml",
+      "name": "Messari",
+      "url": "https://messari.io/rss",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1497
+    },
+    {
+      "template": "crypto.yml",
+      "name": "DeFi Llama News",
+      "url": "https://rsshub.app/defillama/news",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 1102
+    },
+    {
+      "template": "crypto.yml",
+      "name": "Rekt News",
+      "url": "https://rekt.news/feed.xml",
+      "ok": false,
+      "error": "Status code 500",
+      "category": "5xx",
+      "ms": 2005
+    },
+    {
+      "template": "crypto.yml",
+      "name": "Week in Ethereum",
+      "url": "https://weekinethereumnews.com/feed/",
+      "ok": false,
+      "error": "Hostname/IP does not match certificate's altnames: Host: weekinethereumnews.com. is not in the cert's altnames: DNS:*.ingress-florina.ewp.live, DNS:ingress-florina.ewp.live",
+      "category": "ssl",
+      "ms": 2304
+    },
+    {
+      "template": "crypto.yml",
+      "name": "Paradigm Blog",
+      "url": "https://www.paradigm.xyz/feed.xml",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1023
+    },
+    {
+      "template": "crypto.yml",
+      "name": "a16z Crypto",
+      "url": "https://a16zcrypto.com/feed/",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 891
+    },
+    {
+      "template": "crypto.yml",
+      "name": "CoinGecko Blog",
+      "url": "https://www.coingecko.com/en/news/feed",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1273
+    },
+    {
+      "template": "crypto.yml",
+      "name": "CryptoQuant Blog",
+      "url": "https://cryptoquant.com/blog/feed",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1014
+    },
+    {
+      "template": "crypto.yml",
+      "name": "Dune Analytics Blog",
+      "url": "https://dune.com/blog/rss.xml",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1142
+    },
+    {
+      "template": "crypto.yml",
+      "name": "L2Beat Blog",
+      "url": "https://l2beat.com/feed.xml",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 3243
+    },
+    {
+      "template": "crypto.yml",
+      "name": "Solana News",
+      "url": "https://solana.com/news/feed.xml",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1976
+    },
+    {
+      "template": "crypto.yml",
+      "name": "Foresight News",
+      "url": "https://rsshub.app/foresightnews/article",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 1965
+    },
+    {
+      "template": "crypto.yml",
+      "name": "ChainCatcher",
+      "url": "https://rsshub.app/chaincatcher/news",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 1967
+    },
+    {
+      "template": "cyber-security.yml",
+      "name": "SC Magazine",
+      "url": "https://www.scmagazine.com/feed",
+      "ok": false,
+      "error": "Invalid character in entity name\nLine: 14\nColumn: 130291\nChar: &",
+      "category": "invalid_xml",
+      "ms": 6577
+    },
+    {
+      "template": "cyber-security.yml",
+      "name": "Google Project Zero",
+      "url": "https://googleprojectzero.blogspot.com/feeds/posts/default?alt=rss",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10017
+    },
+    {
+      "template": "cyber-security.yml",
+      "name": "Talos Intelligence",
+      "url": "https://blog.talosintelligence.com/feeds/posts/default?alt=rss",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 4935
+    },
+    {
+      "template": "cyber-security.yml",
+      "name": "Microsoft Security Blog",
+      "url": "https://www.microsoft.com/en-us/security/blog/feed/",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 3425
+    },
+    {
+      "template": "cyber-security.yml",
+      "name": "Mandiant Blog",
+      "url": "https://www.mandiant.com/resources/blog/rss.xml",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10018
+    },
+    {
+      "template": "cyber-security.yml",
+      "name": "NVD (NIST)",
+      "url": "https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml",
+      "ok": false,
+      "error": "Status code 406",
+      "category": "http_other",
+      "ms": 4120
+    },
+    {
+      "template": "cyber-security.yml",
+      "name": "Lawfare (Cyber)",
+      "url": "https://www.lawfaremedia.org/feed",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 3448
+    },
+    {
+      "template": "cyber-security.yml",
+      "name": "Rapid7 Blog",
+      "url": "https://blog.rapid7.com/rss/",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10003
+    },
+    {
+      "template": "cyber-security.yml",
+      "name": "Sophos News",
+      "url": "https://news.sophos.com/en-us/feed/",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10009
+    },
+    {
+      "template": "cyber-security.yml",
+      "name": "Kaspersky Securelist",
+      "url": "https://securelist.com/feed/",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10006
+    },
+    {
+      "template": "defense-military.yml",
+      "name": "Defense One",
+      "url": "https://www.defenseone.com/rss/",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1203
+    },
+    {
+      "template": "defense-military.yml",
+      "name": "The War Zone (The Drive)",
+      "url": "https://www.thedrive.com/the-war-zone/feed",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10003
+    },
+    {
+      "template": "defense-military.yml",
+      "name": "Janes",
+      "url": "https://www.janes.com/feeds/news",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1721
+    },
+    {
+      "template": "defense-military.yml",
+      "name": "Military.com",
+      "url": "https://www.military.com/rss-feeds",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 4310
+    },
+    {
+      "template": "defense-military.yml",
+      "name": "Lawfare",
+      "url": "https://www.lawfaremedia.org/feed",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 1779
+    },
+    {
+      "template": "defense-military.yml",
+      "name": "RUSI",
+      "url": "https://rusi.org/rss.xml",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10004
+    },
+    {
+      "template": "defense-military.yml",
+      "name": "The Cipher Brief",
+      "url": "https://www.thecipherbrief.com/feed",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10005
+    },
+    {
+      "template": "defense-military.yml",
+      "name": "Just Security",
+      "url": "https://www.justsecurity.org/feed/",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10002
+    },
+    {
+      "template": "defense-military.yml",
+      "name": "Bulletin of the Atomic Scientists",
+      "url": "https://thebulletin.org/feed/",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 5597
+    },
+    {
+      "template": "defense-military.yml",
+      "name": "Stars and Stripes",
+      "url": "https://www.stripes.com/rss",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 5066
+    },
+    {
+      "template": "defense-military.yml",
+      "name": "Naval News",
+      "url": "https://www.navalnews.com/feed/",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10003
+    },
+    {
+      "template": "defense-military.yml",
+      "name": "Air & Space Forces Magazine",
+      "url": "https://www.airandspaceforces.com/feed/",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10001
+    },
+    {
+      "template": "defense-military.yml",
+      "name": "Task & Purpose",
+      "url": "https://taskandpurpose.com/feed/",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10011
+    },
+    {
+      "template": "defense-military.yml",
+      "name": "USNI News",
+      "url": "https://news.usni.org/feed",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10004
+    },
+    {
+      "template": "defense-military.yml",
+      "name": "Defense Post",
+      "url": "https://www.thedefensepost.com/feed/",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10071
+    },
+    {
+      "template": "energy-climate.yml",
+      "name": "Carbon Brief",
+      "url": "https://www.carbonbrief.org/feed/",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10005
+    },
+    {
+      "template": "energy-climate.yml",
+      "name": "Climate Home News",
+      "url": "https://www.climatechangenews.com/feed/",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10009
+    },
+    {
+      "template": "energy-climate.yml",
+      "name": "Yale Environment 360",
+      "url": "https://e360.yale.edu/feed",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 5903
+    },
+    {
+      "template": "energy-climate.yml",
+      "name": "Grist",
+      "url": "https://grist.org/feed/",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10006
+    },
+    {
+      "template": "energy-climate.yml",
+      "name": "The Guardian Environment",
+      "url": "https://www.theguardian.com/environment/rss",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10013
+    },
+    {
+      "template": "energy-climate.yml",
+      "name": "DeSmog",
+      "url": "https://www.desmog.com/feed/",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10009
+    },
+    {
+      "template": "energy-climate.yml",
+      "name": "IEA News",
+      "url": "https://www.iea.org/news/feed",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 7110
+    },
+    {
+      "template": "energy-climate.yml",
+      "name": "OilPrice.com",
+      "url": "https://oilprice.com/rss/main",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10010
+    },
+    {
+      "template": "energy-climate.yml",
+      "name": "Energy Voice",
+      "url": "https://www.energyvoice.com/feed/",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 6588
+    },
+    {
+      "template": "energy-climate.yml",
+      "name": "S&P Global Commodity Insights",
+      "url": "https://www.spglobal.com/commodityinsights/en/rss-feed",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 6242
+    },
+    {
+      "template": "energy-climate.yml",
+      "name": "CleanTechnica",
+      "url": "https://cleantechnica.com/feed/",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10003
+    },
+    {
+      "template": "energy-climate.yml",
+      "name": "IRENA News",
+      "url": "https://www.irena.org/rss",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 6674
+    },
+    {
+      "template": "energy-climate.yml",
+      "name": "World Nuclear News",
+      "url": "https://world-nuclear-news.org/feed",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 6764
+    },
+    {
+      "template": "energy-climate.yml",
+      "name": "Greentech Media",
+      "url": "https://www.greentechmedia.com/feed/",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10014
+    },
+    {
+      "template": "fact-check.yml",
+      "name": "FactCheck.org",
+      "url": "https://www.factcheck.org/feed/",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10007
+    },
+    {
+      "template": "fact-check.yml",
+      "name": "Lead Stories",
+      "url": "https://leadstories.com/feed/",
+      "ok": false,
+      "error": "Status code 406",
+      "category": "http_other",
+      "ms": 4844
+    },
+    {
+      "template": "fact-check.yml",
+      "name": "AFP Fact Check",
+      "url": "https://factcheck.afp.com/feed",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 3504
+    },
+    {
+      "template": "fact-check.yml",
+      "name": "Reuters Fact Check",
+      "url": "https://www.reuters.com/arc/outboundfeeds/v3/category/reuters-fact-check/?outputType=xml",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 3418
+    },
+    {
+      "template": "fact-check.yml",
+      "name": "CORRECTIV (Germany)",
+      "url": "https://correctiv.org/feed/",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10001
+    },
+    {
+      "template": "fact-check.yml",
+      "name": "Maldita (Spain)",
+      "url": "https://maldita.es/feed/",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10014
+    },
+    {
+      "template": "fact-check.yml",
+      "name": "Logically",
+      "url": "https://www.logically.ai/articles/feed",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10008
+    },
+    {
+      "template": "fact-check.yml",
+      "name": "Misbar",
+      "url": "https://misbar.com/en/rss",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 3711
+    },
+    {
+      "template": "fact-check.yml",
+      "name": "Taiwan FactCheck Center",
+      "url": "https://tfc-taiwan.org.tw/feed",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10007
+    },
+    {
+      "template": "fact-check.yml",
+      "name": "Africa Check",
+      "url": "https://africacheck.org/feed/",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 3556
+    },
+    {
+      "template": "finance.yml",
+      "name": "Bloomberg Markets",
+      "url": "https://feeds.bloomberg.com/markets/news.rss",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10002
+    },
+    {
+      "template": "finance.yml",
+      "name": "Financial Times",
+      "url": "https://www.ft.com/?format=rss",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10020
+    },
+    {
+      "template": "finance.yml",
+      "name": "MarketWatch",
+      "url": "https://feeds.marketwatch.com/marketwatch/topstories/",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10004
+    },
+    {
+      "template": "finance.yml",
+      "name": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/news/rssindex",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10007
+    },
+    {
+      "template": "finance.yml",
+      "name": "Investing.com",
+      "url": "https://www.investing.com/rss/news.rss",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10023
+    },
+    {
+      "template": "finance.yml",
+      "name": "Seeking Alpha",
+      "url": "https://seekingalpha.com/feed.xml",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10007
+    },
+    {
+      "template": "finance.yml",
+      "name": "Wolf Street",
+      "url": "https://wolfstreet.com/feed/",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10006
+    },
+    {
+      "template": "finance.yml",
+      "name": "Calculated Risk",
+      "url": "https://www.calculatedriskblog.com/feeds/posts/default?alt=rss",
+      "ok": false,
+      "error": "Request timed out after 10000ms",
+      "category": "timeout",
+      "ms": 10005
+    },
+    {
+      "template": "finance.yml",
+      "name": "IMF Blog",
+      "url": "https://www.imf.org/en/Blogs/rss",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 6395
+    },
+    {
+      "template": "finance.yml",
+      "name": "World Bank Blog",
+      "url": "https://blogs.worldbank.org/feed",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 7348
+    },
+    {
+      "template": "finance.yml",
+      "name": "Kitco Gold News",
+      "url": "https://www.kitco.com/feed/rss/news/",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 7537
+    },
+    {
+      "template": "finance.yml",
+      "name": "Forex Factory",
+      "url": "https://www.forexfactory.com/feed.php",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 4109
+    },
+    {
+      "template": "finance.yml",
+      "name": "DailyFX",
+      "url": "https://www.dailyfx.com/feeds/all",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 2924
+    },
+    {
+      "template": "finance.yml",
+      "name": "Barron's",
+      "url": "https://www.barrons.com/feed",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 4489
+    },
+    {
+      "template": "finance.yml",
+      "name": "Caixin Global",
+      "url": "https://www.caixinglobal.com/feed/",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1684
+    },
+    {
+      "template": "fintel.yml",
+      "name": "Reuters Business",
+      "url": "https://feeds.reuters.com/reuters/businessNews",
+      "ok": false,
+      "error": "getaddrinfo ENOTFOUND feeds.reuters.com",
+      "category": "dns",
+      "ms": 751
+    },
+    {
+      "template": "fintel.yml",
+      "name": "Reuters Markets",
+      "url": "https://feeds.reuters.com/reuters/marketsNews",
+      "ok": false,
+      "error": "getaddrinfo ENOTFOUND feeds.reuters.com",
+      "category": "dns",
+      "ms": 521
+    },
+    {
+      "template": "fintel.yml",
+      "name": "Reserve Bank of Australia",
+      "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 315
+    },
+    {
+      "template": "fintel.yml",
+      "name": "People's Bank of China",
+      "url": "https://rsshub.app/gov/pboc/goutongjiaoliu",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 140
+    },
+    {
+      "template": "fintel.yml",
+      "name": "IMF Blog",
+      "url": "https://www.imf.org/en/Blogs/rss",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 104
+    },
+    {
+      "template": "fintel.yml",
+      "name": "World Bank Blog",
+      "url": "https://blogs.worldbank.org/feed",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 230
+    },
+    {
+      "template": "fintel.yml",
+      "name": "OECD Insights",
+      "url": "https://www.oecd.org/en/rss.xml",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 953
+    },
+    {
+      "template": "fintel.yml",
+      "name": "Peterson Institute",
+      "url": "https://www.piie.com/blogs/feed",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 389
+    },
+    {
+      "template": "fintel.yml",
+      "name": "CFTC",
+      "url": "https://www.cftc.gov/Newsroom/PressReleases/rss",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1299
+    },
+    {
+      "template": "fintel.yml",
+      "name": "Bridgewater Daily Observations",
+      "url": "https://www.bridgewater.com/feed",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1249
+    },
+    {
+      "template": "fintel.yml",
+      "name": "Ray Dalio Blog",
+      "url": "https://www.principles.com/blog/feed/",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1782
+    },
+    {
+      "template": "fintel.yml",
+      "name": "Fitch Ratings",
+      "url": "https://www.fitchratings.com/rss/sector/Sovereigns",
+      "ok": false,
+      "error": "Invalid character in entity name\nLine: 7\nColumn: 781138\nChar: =",
+      "category": "invalid_xml",
+      "ms": 2950
+    },
+    {
+      "template": "fintel.yml",
+      "name": "S&P Global Ratings",
+      "url": "https://www.spglobal.com/ratings/en/rss-feeds",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 251
+    },
+    {
+      "template": "geopolitics.yml",
+      "name": "Council on Foreign Relations",
+      "url": "https://www.cfr.org/rss/all",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1151
+    },
+    {
+      "template": "geopolitics.yml",
+      "name": "Brookings Institution",
+      "url": "https://www.brookings.edu/feed/",
+      "ok": false,
+      "error": "Invalid character in entity name\nLine: 104\nColumn: 45\nChar: =",
+      "category": "invalid_xml",
+      "ms": 1362
+    },
+    {
+      "template": "geopolitics.yml",
+      "name": "CSIS",
+      "url": "https://www.csis.org/analysis/feed",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 168
+    },
+    {
+      "template": "geopolitics.yml",
+      "name": "Carnegie Endowment",
+      "url": "https://carnegieendowment.org/rss/solr/?lang=en",
+      "ok": false,
+      "error": "Feed not recognized as RSS 1 or 2.",
+      "category": "invalid_xml",
+      "ms": 944
+    },
+    {
+      "template": "geopolitics.yml",
+      "name": "Wilson Center",
+      "url": "https://www.wilsoncenter.org/rss.xml",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 525
+    },
+    {
+      "template": "geopolitics.yml",
+      "name": "Heritage Foundation",
+      "url": "https://www.heritage.org/rss/all-research",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 548
+    },
+    {
+      "template": "geopolitics.yml",
+      "name": "Hudson Institute",
+      "url": "https://www.hudson.org/feed",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1143
+    },
+    {
+      "template": "geopolitics.yml",
+      "name": "IISS",
+      "url": "https://www.iiss.org/rss",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 497
+    },
+    {
+      "template": "geopolitics.yml",
+      "name": "Chatham House",
+      "url": "https://www.chathamhouse.org/rss",
+      "ok": false,
+      "error": "Invalid character in entity name\nLine: 9\nColumn: 47\nChar: =",
+      "category": "invalid_xml",
+      "ms": 4186
+    },
+    {
+      "template": "geopolitics.yml",
+      "name": "SIPRI",
+      "url": "https://www.sipri.org/rss.xml",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 4115
+    },
+    {
+      "template": "geopolitics.yml",
+      "name": "Asia Society",
+      "url": "https://asiasociety.org/feed",
+      "ok": false,
+      "error": "Invalid character in entity name\nLine: 28\nColumn: 43\nChar: =",
+      "category": "invalid_xml",
+      "ms": 2805
+    },
+    {
+      "template": "geopolitics.yml",
+      "name": "Lowy Institute",
+      "url": "https://www.lowyinstitute.org/the-interpreter/feed",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 641
+    },
+    {
+      "template": "geopolitics.yml",
+      "name": "Nikkei Asia",
+      "url": "https://asia.nikkei.com/rss",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 868
+    },
+    {
+      "template": "geopolitics.yml",
+      "name": "International Crisis Group",
+      "url": "https://www.crisisgroup.org/feed",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1747
+    },
+    {
+      "template": "geopolitics.yml",
+      "name": "ACLED",
+      "url": "https://acleddata.com/feed/",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 2125
+    },
+    {
+      "template": "geopolitics.yml",
+      "name": "SIPRI Blog",
+      "url": "https://www.sipri.org/rss.xml",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 2909
+    },
+    {
+      "template": "geopolitics.yml",
+      "name": "Reuters World",
+      "url": "https://feeds.reuters.com/reuters/worldNews",
+      "ok": false,
+      "error": "getaddrinfo ENOTFOUND feeds.reuters.com",
+      "category": "dns",
+      "ms": 557
+    },
+    {
+      "template": "geopolitics.yml",
+      "name": "AP World",
+      "url": "https://rsshub.app/apnews/topics/apf-topnews",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 987
+    },
+    {
+      "template": "health-science.yml",
+      "name": "Medscape",
+      "url": "https://www.medscape.com/cx/rssfeeds/2685.xml",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1442
+    },
+    {
+      "template": "health-science.yml",
+      "name": "WHO News",
+      "url": "https://www.who.int/feeds/entity/news/en/rss.xml",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1593
+    },
+    {
+      "template": "health-science.yml",
+      "name": "ProMED",
+      "url": "https://promedmail.org/feed/",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 2944
+    },
+    {
+      "template": "health-science.yml",
+      "name": "Scientific American",
+      "url": "https://rss.sciam.com/ScientificAmerican-Global",
+      "ok": false,
+      "error": "Client network socket disconnected before secure TLS connection was established",
+      "category": "ssl",
+      "ms": 1143
+    },
+    {
+      "template": "health-science.yml",
+      "name": "FDA News",
+      "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1272
+    },
+    {
+      "template": "health-science.yml",
+      "name": "Health Affairs Blog",
+      "url": "https://www.healthaffairs.org/do/section/blog/feed/",
+      "ok": false,
+      "error": "Attribute without value\nLine: 369\nColumn: 15\nChar: s",
+      "category": "other",
+      "ms": 5836
+    },
+    {
+      "template": "media-entertainment.yml",
+      "name": "Vulture",
+      "url": "https://www.vulture.com/feed/rss/index.xml",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1468
+    },
+    {
+      "template": "politics.yml",
+      "name": "Reuters World",
+      "url": "https://www.reutersagency.com/feed/?taxonomy=best-sectors&post_type=best",
+      "ok": false,
+      "error": "Status code 406",
+      "category": "http_other",
+      "ms": 1796
+    },
+    {
+      "template": "politics.yml",
+      "name": "AP News",
+      "url": "https://rsshub.app/apnews/topics/apf-topnews",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 505
+    },
+    {
+      "template": "politics.yml",
+      "name": "DW News",
+      "url": "https://rss.dw.com/rss/en/top",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1144
+    },
+    {
+      "template": "politics.yml",
+      "name": "Nikkei Asia",
+      "url": "https://asia.nikkei.com/rss",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1208
+    },
+    {
+      "template": "politics.yml",
+      "name": "Middle East Eye",
+      "url": "https://www.middleeasteye.net/rss",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 5554
+    },
+    {
+      "template": "politics.yml",
+      "name": "Times of Israel",
+      "url": "https://www.timesofisrael.com/feed/",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 529
+    },
+    {
+      "template": "sports.yml",
+      "name": "Bleacher Report",
+      "url": "https://bleacherreport.com/articles/feed",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 901
+    },
+    {
+      "template": "sports.yml",
+      "name": "Goal.com",
+      "url": "https://www.goal.com/feeds/en/news",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1566
+    },
+    {
+      "template": "sports.yml",
+      "name": "Transfermarkt News",
+      "url": "https://rsshub.app/transfermarkt/news/en",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 781
+    },
+    {
+      "template": "sports.yml",
+      "name": "NBA.com News",
+      "url": "https://www.nba.com/feeds/content/rss",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 797
+    },
+    {
+      "template": "sports.yml",
+      "name": "HoopsHype",
+      "url": "https://hoopshype.com/feed/",
+      "ok": false,
+      "error": "Status code 406",
+      "category": "http_other",
+      "ms": 1479
+    },
+    {
+      "template": "sports.yml",
+      "name": "NFL.com News",
+      "url": "https://www.nfl.com/rss/rsslanding?searchString=home",
+      "ok": false,
+      "error": "Attribute without value\nLine: 5\nColumn: 157183\nChar: i",
+      "category": "other",
+      "ms": 4145
+    },
+    {
+      "template": "sports.yml",
+      "name": "Tennis.com",
+      "url": "https://www.tennis.com/feeds/rss",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 534
+    },
+    {
+      "template": "sports.yml",
+      "name": "MMA Fighting",
+      "url": "https://www.mmafighting.com/rss/current",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1106
+    },
+    {
+      "template": "sports.yml",
+      "name": "MMA Junkie",
+      "url": "https://mmajunkie.usatoday.com/feed",
+      "ok": false,
+      "error": "Status code 406",
+      "category": "http_other",
+      "ms": 795
+    },
+    {
+      "template": "sports.yml",
+      "name": "Inside the Games",
+      "url": "https://www.insidethegames.biz/rss/all/news",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 284
+    },
+    {
+      "template": "sports.yml",
+      "name": "World Athletics",
+      "url": "https://worldathletics.org/rss/news",
+      "ok": false,
+      "error": "Feed not recognized as RSS 1 or 2.",
+      "category": "invalid_xml",
+      "ms": 843
+    },
+    {
+      "template": "sports.yml",
+      "name": "Boxing News",
+      "url": "https://www.boxingnews24.com/feed/",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 284
+    },
+    {
+      "template": "sports.yml",
+      "name": "Bad Left Hook",
+      "url": "https://www.badlefthook.com/rss/current",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1163
+    },
+    {
+      "template": "sports.yml",
+      "name": "Golf Digest",
+      "url": "https://www.golfdigest.com/feed/rss",
+      "ok": false,
+      "error": "Status code 403",
+      "category": "403",
+      "ms": 268
+    },
+    {
+      "template": "sports.yml",
+      "name": "PGA Tour News",
+      "url": "https://www.pgatour.com/feeds/rss",
+      "ok": false,
+      "error": "Status code 404",
+      "category": "404",
+      "ms": 1717
+    }
+  ]
+}

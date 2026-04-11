@@ -20,8 +20,14 @@ function start(port) {
     const parsed = url.parse(req.url, true);
     const pathname = parsed.pathname;
 
-    // CORS for local dev
-    res.setHeader("Access-Control-Allow-Origin", "*");
+    // CORS — restrict to local origins (plus optional WEB_ALLOW_ORIGIN)
+    const origin = req.headers.origin || "";
+    const allowedOrigin = process.env.WEB_ALLOW_ORIGIN || "";
+    const localOrigin = /^https?:\/\/(localhost|127\.0\.0\.1|\[::1\])(:\d+)?$/.test(origin);
+    if (localOrigin || (allowedOrigin && origin === allowedOrigin)) {
+      res.setHeader("Access-Control-Allow-Origin", origin);
+    }
+    res.setHeader("Vary", "Origin");
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     if (req.method === "OPTIONS") { res.writeHead(204); res.end(); return; }
@@ -102,6 +108,9 @@ function getHistory(query) {
   });
 }
 
+// Whitelist of safe template name characters — prevents path traversal
+const SAFE_NAME = /^[a-z0-9_-]{1,64}$/i;
+
 async function handleTrigger(req, res) {
   if (!scheduler) { json(res, { error: "Scheduler not initialized" }); return; }
   let body = "";
@@ -109,13 +118,25 @@ async function handleTrigger(req, res) {
   req.on("end", async () => {
     try {
       const { template } = body ? JSON.parse(body) : {};
-      json(res, { status: "triggered", template: template || "all" });
-      // Run async, don't wait
       if (template) {
-        const tpl = templateLoader.load(template);
-        tpl._name = template;
+        // Sanitize: strip directory components and validate format
+        const safeName = path.basename(String(template));
+        if (!SAFE_NAME.test(safeName)) {
+          json(res, { error: "Invalid template name" });
+          return;
+        }
+        // Verify it exists in the known template list
+        const allowed = templateLoader.listAll();
+        if (!allowed.includes(safeName)) {
+          json(res, { error: "Unknown template" });
+          return;
+        }
+        json(res, { status: "triggered", template: safeName });
+        const tpl = templateLoader.load(safeName);
+        tpl._name = safeName;
         scheduler.runOnce(tpl).catch(console.error);
       } else {
+        json(res, { status: "triggered", template: "all" });
         scheduler.runAll().catch(console.error);
       }
     } catch (err) { json(res, { error: err.message }); }

@@ -70,7 +70,7 @@ async function main() {
   if (isOnce) {
     console.log("Running single cycle (--once mode)...\n");
     await scheduler.runAll();
-    dedup.close();
+    await dedup.close();
     process.exit(0);
   }
 
@@ -91,9 +91,9 @@ async function main() {
   }
 
   // Graceful shutdown
-  process.on("SIGINT", () => {
+  process.on("SIGINT", async () => {
     console.log("\nShutting down...");
-    dedup.close();
+    try { await dedup.close(); } catch (_) {}
     process.exit(0);
   });
 }
