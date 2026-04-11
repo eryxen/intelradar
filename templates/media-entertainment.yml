@@ -61,8 +61,6 @@ feeds:
     url: https://techcrunch.com/category/media-entertainment/feed/
   - name: The Wrap
     url: https://www.thewrap.com/feed/
-  - name: Vulture
-    url: https://www.vulture.com/feed/rss/index.xml
   - name: AV Club
     url: https://www.avclub.com/rss
   - name: Collider

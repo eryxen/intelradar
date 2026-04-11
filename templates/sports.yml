@@ -27,16 +27,12 @@ feeds:
     url: https://www.skysports.com/rss/12040
   - name: The Athletic
     url: https://theathletic.com/feeds/rss/news/
-  - name: Bleacher Report
-    url: https://bleacherreport.com/articles/feed
 
   # Football/Soccer
   - name: BBC Football
     url: https://feeds.bbci.co.uk/sport/football/rss.xml
   - name: ESPN FC
     url: https://www.espn.com/espn/rss/soccer/news
-  - name: Goal.com
-    url: https://www.goal.com/feeds/en/news
   - name: FourFourTwo
     url: https://www.fourfourtwo.com/feeds/all
   - name: Transfermarkt News
@@ -47,8 +43,6 @@ feeds:
   # NBA / Basketball
   - name: ESPN NBA
     url: https://www.espn.com/espn/rss/nba/news
-  - name: NBA.com News
-    url: https://www.nba.com/feeds/content/rss
   - name: HoopsHype
     url: https://hoopshype.com/feed/
 
@@ -69,14 +63,10 @@ feeds:
     url: https://www.racefans.net/feed/
 
   # Tennis
-  - name: Tennis.com
-    url: https://www.tennis.com/feeds/rss
   - name: ESPN Tennis
     url: https://www.espn.com/espn/rss/tennis/news
 
   # MMA / Combat Sports
-  - name: MMA Fighting
-    url: https://www.mmafighting.com/rss/current
   - name: MMA Junkie
     url: https://mmajunkie.usatoday.com/feed
 
@@ -95,11 +85,7 @@ feeds:
   # Boxing
   - name: Boxing News
     url: https://www.boxingnews24.com/feed/
-  - name: Bad Left Hook
-    url: https://www.badlefthook.com/rss/current
 
   # Golf
   - name: Golf Digest
     url: https://www.golfdigest.com/feed/rss
-  - name: PGA Tour News
-    url: https://www.pgatour.com/feeds/rss

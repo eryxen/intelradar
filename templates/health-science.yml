@@ -41,22 +41,14 @@ feeds:
     url: https://www.statnews.com/feed/
   - name: BMJ News
     url: https://www.bmj.com/rss/recent.xml
-  - name: Medscape
-    url: https://www.medscape.com/cx/rssfeeds/2685.xml
 
   # Public Health
-  - name: WHO News
-    url: https://www.who.int/feeds/entity/news/en/rss.xml
   - name: CDC Newsroom
     url: https://tools.cdc.gov/api/v2/resources/media/132608.rss
-  - name: ProMED
-    url: https://promedmail.org/feed/
   - name: CIDRAP
     url: https://www.cidrap.umn.edu/rss.xml
 
   # Science News
-  - name: Scientific American
-    url: https://rss.sciam.com/ScientificAmerican-Global
   - name: New Scientist
     url: https://www.newscientist.com/feed/home/
   - name: Quanta Magazine
@@ -77,8 +69,6 @@ feeds:
     url: https://www.biopharmadive.com/feeds/news/
 
   # Emerging Health
-  - name: FDA News
-    url: https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds
   - name: Health Affairs Blog
     url: https://www.healthaffairs.org/do/section/blog/feed/
   - name: KFF Health News

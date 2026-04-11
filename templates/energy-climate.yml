@@ -27,8 +27,6 @@ feeds:
     url: https://insideclimatenews.org/feed/
   - name: Climate Home News
     url: https://www.climatechangenews.com/feed/
-  - name: Yale Environment 360
-    url: https://e360.yale.edu/feed
   - name: Grist
     url: https://grist.org/feed/
   - name: The Guardian Environment
@@ -37,8 +35,6 @@ feeds:
     url: https://www.desmog.com/feed/
 
   # Energy Industry
-  - name: IEA News
-    url: https://www.iea.org/news/feed
   - name: OilPrice.com
     url: https://oilprice.com/rss/main
   - name: Energy Voice
@@ -73,8 +69,6 @@ feeds:
     url: https://www.canarymedia.com/feed
   - name: Energy Monitor
     url: https://www.energymonitor.ai/feed/
-  - name: World Nuclear News
-    url: https://world-nuclear-news.org/feed
   - name: Greentech Media
     url: https://www.greentechmedia.com/feed/
   - name: E&E News

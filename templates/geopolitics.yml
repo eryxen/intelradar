@@ -22,38 +22,22 @@ polymarket:
 
 feeds:
   # Think Tanks — US
-  - name: Council on Foreign Relations
-    url: https://www.cfr.org/rss/all
   - name: Brookings Institution
     url: https://www.brookings.edu/feed/
-  - name: CSIS
-    url: https://www.csis.org/analysis/feed
   - name: Carnegie Endowment
     url: https://carnegieendowment.org/rss/solr/?lang=en
   - name: RAND Corporation
     url: https://www.rand.org/blog.xml
   - name: Atlantic Council
     url: https://www.atlanticcouncil.org/feed/
-  - name: Wilson Center
-    url: https://www.wilsoncenter.org/rss.xml
   - name: Stimson Center
     url: https://www.stimson.org/feed/
-  - name: Heritage Foundation
-    url: https://www.heritage.org/rss/all-research
-  - name: Hudson Institute
-    url: https://www.hudson.org/feed
 
   # Think Tanks — International
-  - name: IISS
-    url: https://www.iiss.org/rss
   - name: Chatham House
     url: https://www.chathamhouse.org/rss
-  - name: SIPRI
-    url: https://www.sipri.org/rss.xml
   - name: Asia Society
     url: https://asiasociety.org/feed
-  - name: Lowy Institute
-    url: https://www.lowyinstitute.org/the-interpreter/feed
   - name: ECFR
     url: https://ecfr.eu/feed/
 
@@ -74,27 +58,17 @@ feeds:
     url: https://www.scmp.com/rss/4/feed
   - name: The Diplomat
     url: https://thediplomat.com/feed/
-  - name: Nikkei Asia
-    url: https://asia.nikkei.com/rss
   - name: BBC World
     url: https://feeds.bbci.co.uk/news/world/rss.xml
 
   # Conflict & Security
-  - name: International Crisis Group
-    url: https://www.crisisgroup.org/feed
-  - name: ACLED
-    url: https://acleddata.com/feed/
   - name: Bellingcat
     url: https://www.bellingcat.com/feed/
 
   # Arms & Trade
-  - name: SIPRI Blog
-    url: https://www.sipri.org/rss.xml
   - name: Arms Control Wonk
     url: https://www.armscontrolwonk.com/feed/
 
   # Wire Services
-  - name: Reuters World
-    url: https://feeds.reuters.com/reuters/worldNews
   - name: AP World
     url: https://rsshub.app/apnews/topics/apf-topnews

@@ -51,12 +51,8 @@ feeds:
     url: https://www.politico.eu/feed/
   - name: The Guardian World
     url: https://www.theguardian.com/world/rss
-  - name: DW News
-    url: https://rss.dw.com/rss/en/top
 
   # Asia
-  - name: Nikkei Asia
-    url: https://asia.nikkei.com/rss
   - name: South China Morning Post
     url: https://www.scmp.com/rss/4/feed
   - name: Channel News Asia
@@ -65,8 +61,6 @@ feeds:
     url: https://www.japantimes.co.jp/feed/
 
   # Middle East
-  - name: Middle East Eye
-    url: https://www.middleeasteye.net/rss
   - name: Times of Israel
     url: https://www.timesofisrael.com/feed/
   - name: Al-Monitor

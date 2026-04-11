@@ -26,10 +26,6 @@ feeds:
   # Major Financial
   - name: Bloomberg Markets
     url: https://feeds.bloomberg.com/markets/news.rss
-  - name: Reuters Business
-    url: https://feeds.reuters.com/reuters/businessNews
-  - name: Reuters Markets
-    url: https://feeds.reuters.com/reuters/marketsNews
   - name: CNBC Top News
     url: https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114
   - name: MarketWatch
@@ -60,30 +56,18 @@ feeds:
     url: https://finance.yahoo.com/news/rssindex
   - name: IMF Blog
     url: https://www.imf.org/en/Blogs/rss
-  - name: World Bank Blog
-    url: https://blogs.worldbank.org/feed
   - name: BIS Speeches
     url: https://www.bis.org/doclist/cbspeeches.rss
-  - name: OECD Insights
-    url: https://www.oecd.org/en/rss.xml
-  - name: Peterson Institute
-    url: https://www.piie.com/blogs/feed
 
   # Institutional & Regulation
   - name: SEC Press Releases
     url: https://www.sec.gov/news/pressreleases.rss
-  - name: CFTC
-    url: https://www.cftc.gov/Newsroom/PressReleases/rss
   - name: Naked Capitalism
     url: https://www.nakedcapitalism.com/feed
   - name: Wolf Street
     url: https://wolfstreet.com/feed/
   - name: Calculated Risk
     url: https://www.calculatedriskblog.com/feeds/posts/default?alt=rss
-  - name: Bridgewater Daily Observations
-    url: https://www.bridgewater.com/feed
-  - name: Ray Dalio Blog
-    url: https://www.principles.com/blog/feed/
   - name: Fitch Ratings
     url: https://www.fitchratings.com/rss/sector/Sovereigns
   - name: S&P Global Ratings

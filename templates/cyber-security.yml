@@ -45,8 +45,6 @@ feeds:
     url: https://www.schneier.com/feed/
   - name: Google Project Zero
     url: https://googleprojectzero.blogspot.com/feeds/posts/default?alt=rss
-  - name: Talos Intelligence
-    url: https://blog.talosintelligence.com/feeds/posts/default?alt=rss
   - name: Microsoft Security Blog
     url: https://www.microsoft.com/en-us/security/blog/feed/
   - name: Google Threat Analysis
@@ -67,8 +65,6 @@ feeds:
     url: https://www.exploit-db.com/rss.xml
 
   # Policy & Governance
-  - name: Lawfare (Cyber)
-    url: https://www.lawfaremedia.org/feed
   - name: The Record by Recorded Future
     url: https://therecord.media/feed/
   - name: Risky Business News

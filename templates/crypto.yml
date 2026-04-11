@@ -35,36 +35,20 @@ feeds:
     url: https://cryptoslate.com/feed/
   - name: Blockworks
     url: https://blockworks.co/feed
-  - name: DeFi Pulse (Blog)
-    url: https://www.defipulse.com/blog/rss.xml
 
   # DeFi & Research
   - name: The Defiant
     url: https://thedefiant.io/feed
   - name: Bankless
     url: https://www.bankless.com/feed
-  - name: Messari
-    url: https://messari.io/rss
   - name: DeFi Llama News
     url: https://rsshub.app/defillama/news
   - name: Rekt News
     url: https://rekt.news/feed.xml
-  - name: Week in Ethereum
-    url: https://weekinethereumnews.com/feed/
-  - name: Paradigm Blog
-    url: https://www.paradigm.xyz/feed.xml
-  - name: a16z Crypto
-    url: https://a16zcrypto.com/feed/
 
   # Market & Analysis
-  - name: CoinGecko Blog
-    url: https://www.coingecko.com/en/news/feed
   - name: Glassnode Insights
     url: https://insights.glassnode.com/rss/
-  - name: CryptoQuant Blog
-    url: https://cryptoquant.com/blog/feed
-  - name: Dune Analytics Blog
-    url: https://dune.com/blog/rss.xml
 
   # Regulation & Institutional
   - name: Protos
@@ -83,12 +67,8 @@ feeds:
     url: https://ambcrypto.com/feed/
 
   # Layer 2 & Infrastructure
-  - name: L2Beat Blog
-    url: https://l2beat.com/feed.xml
   - name: Ethereum Foundation Blog
     url: https://blog.ethereum.org/feed.xml
-  - name: Solana News
-    url: https://solana.com/news/feed.xml
 
   # Asia Crypto
   - name: Foresight News

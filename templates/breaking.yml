@@ -14,10 +14,6 @@ polymarket:
 
 feeds:
   # Wire Services
-  - name: Reuters Top News
-    url: https://feeds.reuters.com/reuters/topNews
-  - name: Reuters World
-    url: https://feeds.reuters.com/reuters/worldNews
   - name: AP Top News
     url: https://rsshub.app/apnews/topics/apf-topnews
   - name: AFP
@@ -28,8 +24,6 @@ feeds:
     url: https://feeds.bbci.co.uk/news/rss.xml
   - name: BBC World
     url: https://feeds.bbci.co.uk/news/world/rss.xml
-  - name: CNN Top Stories
-    url: https://rss.cnn.com/rss/edition.rss
   - name: Al Jazeera
     url: https://www.aljazeera.com/xml/rss/all.xml
   - name: NPR News
@@ -38,8 +32,6 @@ feeds:
     url: https://www.theguardian.com/world/rss
 
   # Regional Wires
-  - name: DW News
-    url: https://rss.dw.com/rss/en/top
   - name: France 24
     url: https://www.france24.com/en/rss
   - name: NHK World

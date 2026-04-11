@@ -37,8 +37,6 @@ feeds:
     url: https://fullfact.org/feed/
   - name: AFP Fact Check
     url: https://factcheck.afp.com/feed
-  - name: Reuters Fact Check
-    url: https://www.reuters.com/arc/outboundfeeds/v3/category/reuters-fact-check/?outputType=xml
   - name: BBC Reality Check
     url: https://feeds.bbci.co.uk/news/reality_check/rss.xml
   - name: CORRECTIV (Germany)

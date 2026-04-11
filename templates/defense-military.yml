@@ -21,18 +21,12 @@ polymarket:
 
 feeds:
   # Defense News
-  - name: Defense One
-    url: https://www.defenseone.com/rss/
   - name: Breaking Defense
     url: https://breakingdefense.com/feed/
   - name: Defense News
     url: https://www.defensenews.com/arc/outboundfeeds/rss/
   - name: The War Zone (The Drive)
     url: https://www.thedrive.com/the-war-zone/feed
-  - name: Janes
-    url: https://www.janes.com/feeds/news
-  - name: Military.com
-    url: https://www.military.com/rss-feeds
 
   # Analysis & Commentary
   - name: War on the Rocks
@@ -65,8 +59,6 @@ feeds:
     url: https://thebulletin.org/feed/
 
   # Regional Military
-  - name: Stars and Stripes
-    url: https://www.stripes.com/rss
   - name: Naval News
     url: https://www.navalnews.com/feed/
   - name: Air & Space Forces Magazine

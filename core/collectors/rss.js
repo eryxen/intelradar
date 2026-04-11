@@ -4,9 +4,13 @@
  */
 const Parser = require("rss-parser");
 
+// Use a realistic User-Agent — many sites block custom/bot UAs with 403
 const parser = new Parser({
   timeout: 15000,
-  headers: { "User-Agent": "IntelRadar/0.1 (+https://github.com/xen/intelradar)" },
+  headers: {
+    "User-Agent": "Mozilla/5.0 (compatible; IntelRadar/0.1; +https://github.com/eryxen/intelradar) AppleWebKit/537.36",
+    "Accept": "application/rss+xml, application/atom+xml, application/xml;q=0.9, */*;q=0.8",
+  },
 });
 
 /**

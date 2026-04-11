@@ -56,16 +56,10 @@ feeds:
     url: https://www.bankofengland.co.uk/rss/news
   - name: IMF Blog
     url: https://www.imf.org/en/Blogs/rss
-  - name: World Bank Blog
-    url: https://blogs.worldbank.org/feed
 
   # Commodities & Forex
-  - name: Kitco Gold News
-    url: https://www.kitco.com/feed/rss/news/
   - name: OilPrice.com
     url: https://oilprice.com/rss/main
-  - name: Forex Factory
-    url: https://www.forexfactory.com/feed.php
   - name: DailyFX
     url: https://www.dailyfx.com/feeds/all
   - name: Barron's
@@ -78,5 +72,3 @@ feeds:
     url: https://financialpost.com/feed
   - name: Nikkei Markets
     url: https://asia.nikkei.com/rss/feed/nar
-  - name: Caixin Global
-    url: https://www.caixinglobal.com/feed/

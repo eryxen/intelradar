@@ -35,8 +35,6 @@ feeds:
     url: https://hnrss.org/best?points=100
   - name: arXiv CS.AI
     url: https://rss.arxiv.org/rss/cs.AI
-  - name: Anthropic Blog
-    url: https://www.anthropic.com/feed.xml
   - name: OpenAI Blog
     url: https://openai.com/blog/rss.xml
 
@@ -63,8 +61,6 @@ feeds:
     url: https://blog.google/technology/ai/rss/
   - name: DeepMind Blog
     url: https://deepmind.google/blog/rss.xml
-  - name: Meta AI Blog
-    url: https://ai.meta.com/blog/rss/
   - name: Microsoft Research
     url: https://www.microsoft.com/en-us/research/feed/
   - name: Nvidia Blog AI
@@ -77,8 +73,6 @@ feeds:
     url: https://rss.arxiv.org/rss/cs.LG
 
   # AI Newsletters & Analysis
-  - name: The Batch (Andrew Ng)
-    url: https://www.deeplearning.ai/the-batch/feed/
   - name: Import AI
     url: https://importai.substack.com/feed
   - name: The Gradient
@@ -109,8 +103,6 @@ feeds:
     url: https://www.anandtech.com/rss/
   - name: SemiAnalysis
     url: https://semianalysis.substack.com/feed
-  - name: Samsung Semiconductor
-    url: https://semiconductor.samsung.com/us/newsroom/rss/
 
   # Robotics & Emerging
   - name: IEEE Robotics
